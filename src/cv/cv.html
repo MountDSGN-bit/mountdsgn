@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<title>Гора Алексей — UX/UI / Product Designer — CV</title>
+<style>
+@font-face{font-family:Poppins;font-weight:300;src:url(../site/assets/fonts/Poppins-Light.woff)}
+@font-face{font-family:Poppins;font-weight:400;src:url(../site/assets/fonts/Poppins-Regular.woff)}
+@font-face{font-family:Poppins;font-weight:500;src:url(../site/assets/fonts/Poppins-Medium.woff)}
+@font-face{font-family:Poppins;font-weight:600;src:url(../site/assets/fonts/Poppins-SemiBold.woff)}
+@font-face{font-family:Poppins;font-weight:700;src:url(../site/assets/fonts/Poppins-Bold.woff)}
+@font-face{font-family:"Montserrat Cyr";font-weight:100 900;src:url(../site/assets/fonts/Montserrat-var.woff);unicode-range:U+0400-04FF,U+2116}
+@page{size:A4;margin:0}
+:root{--ink:#111113;--ink2:#28282A;--mut:#6B6B70;--card:#F5F5F5;--line:#E4E4E7;--f:Poppins,"Montserrat Cyr",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font:400 9.2pt/1.5 var(--f);color:var(--ink);width:210mm}
+a{color:inherit;text-decoration:none}
+.page{width:210mm;height:297mm;padding:12mm 15mm 12mm;position:relative;overflow:hidden;page-break-after:always}
+.page:last-child{page-break-after:auto}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:10mm;padding-bottom:6mm;border-bottom:1.2px solid var(--ink)}
+h1{font:700 27pt/1.05 var(--f);letter-spacing:-.01em}
+.role{margin-top:2.2mm;font:500 11.5pt/1.3 var(--f);color:var(--ink2)}
+.contacts{font:400 8.6pt/1.65 var(--f);text-align:right;color:var(--ink2)}
+.contacts b{font-weight:500;color:var(--mut);margin-right:1.2mm}
+.sum{margin-top:6mm;font:400 9.8pt/1.6 var(--f);color:var(--ink2);max-width:178mm}
+h2{font:600 8pt/1 var(--f);letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:6.5mm 0 3mm;display:flex;align-items:center;gap:3mm}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.stat{background:var(--card);border-radius:3.2mm;padding:3mm 4mm}
+.stat b{display:block;font:600 15pt/1.1 var(--f);letter-spacing:-.01em}
+.stat span{display:block;margin-top:1.2mm;font:400 7.6pt/1.4 var(--f);color:var(--mut)}
+.job{display:grid;grid-template-columns:34mm 1fr;gap:5mm;margin-bottom:4mm;break-inside:avoid}
+.when{font:400 8.2pt/1.5 var(--f);color:var(--mut)}
+.job h3{font:600 11pt/1.3 var(--f)}
+.job .co{font:500 9pt/1.4 var(--f);color:var(--ink2)}
+.job .about{margin-top:1.4mm;font:400 8.6pt/1.5 var(--f);color:var(--mut)}
+ul{list-style:none;margin-top:2.2mm}
+li{position:relative;padding-left:4mm;margin-bottom:1.35mm;font:400 8.9pt/1.5 var(--f)}
+li::before{content:"";position:absolute;left:.4mm;top:2.1mm;width:1.3mm;height:1.3mm;border-radius:50%;background:var(--ink)}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.pr{background:var(--card);border-radius:3.2mm;padding:3mm 4.2mm;break-inside:avoid}
+.pr h4{font:600 9.6pt/1.3 var(--f)}
+.pr small{display:block;margin-top:.8mm;font:500 7.4pt/1.4 var(--f);letter-spacing:.04em;color:var(--mut);text-transform:uppercase}
+.pr p{margin-top:1.8mm;font:400 8.3pt/1.5 var(--f);color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.sk{margin-bottom:2.6mm}
+.sk h5{font:600 8.6pt/1.3 var(--f);margin-bottom:1.6mm}
+.chips{display:flex;flex-wrap:wrap;gap:1.6mm}
+.chip{background:var(--card);border-radius:99mm;padding:1.1mm 3mm;font:500 8pt/1.4 var(--f)}
+.ed{margin-bottom:3.2mm;display:grid;grid-template-columns:12mm 1fr;gap:3mm}
+.ed .y{font:400 8.2pt/1.5 var(--f);color:var(--mut)}
+.ed b{display:block;font:600 9pt/1.4 var(--f)}
+.ed span{display:block;font:400 8.2pt/1.45 var(--f);color:var(--mut)}
+.kv{display:grid;grid-template-columns:24mm 1fr 24mm 1fr;gap:1.8mm 4mm;font:400 8.8pt/1.5 var(--f)}
+.kv dt{color:var(--mut)}
+.foot{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;justify-content:space-between;font:400 7.4pt/1 var(--f);color:var(--mut)}
+</style></head><body>
+
+<section class="page">
+<header>
+  <div>
+    <h1>Гора Алексей</h1>
+    <p class="role">UX/UI-дизайнер / Product Designer · web, mobile</p>
+  </div>
+  <div class="contacts">
+    <div><b>Тел.</b><a href="tel:+79183212635">+7 (918) 321-26-35</a></div>
+    <div><b>Email</b><a href="mailto:mountdsgn@mail.ru">mountdsgn@mail.ru</a></div>
+    <div><b>Telegram</b><a href="https://t.me/mountdsgn1">@mountdsgn1</a></div>
+    <div><b>Город</b>Краснодар · удалённо</div>
+  </div>
+</header>
+
+<p class="sum">Product- и UX/UI-дизайнер с 4+ годами опыта в web- и mobile-продуктах: B2B SaaS, fintech, web3. Веду задачу весь цикл: от анализа требований и UX-исследований до прототипов, UI и передачи в разработку. Строю и развиваю дизайн-системы, работаю с гипотезами и данными исследований, аргументирую решения. Работаю в команде с PM, аналитиками и разработкой.</p>
+
+<h2>Результаты в работе</h2>
+<div class="stats">
+  <div class="stat"><b>−25–30%</b><span>время разработки новых экранов благодаря дизайн-системе</span></div>
+  <div class="stat"><b>+15–20%</b><span>CTR ключевых элементов в среднем после разработки новых интерфейсов</span></div>
+  <div class="stat"><b>~85–90%</b><span>успешное завершение ключевых флоу после UX-исследований и A/B-тестов</span></div>
+  <div class="stat"><b>−30%</b><span>возвратов задач от разработки благодаря дизайн-ревью</span></div>
+  <div class="stat"><b>−20%</b><span>срок выхода новых дизайнеров на полную продуктивность</span></div>
+  <div class="stat"><b>−1–2 шага</b><span>в ключевых пользовательских флоу</span></div>
+</div>
+
+<h2>Опыт работы</h2>
+<div class="job">
+  <div class="when">Июль 2023 — настоящее время</div>
+  <div>
+    <h3>UX/UI-дизайнер</h3>
+    <div class="co">Крым Диджитал Груп</div>
+    <p class="about">IT-компания: разработка ПО, системная интеграция, автоматизация бизнес-процессов. Проектирование интерфейсов web- и mobile-приложений для B2B-сегмента. Ключевой проект: цифровая платформа для винодельни (B2B SaaS, web + mobile).</p>
+    <ul>
+      <li>Создал и поддерживал дизайн-систему продукта: время разработки новых экранов сократилось на 25–30%.</li>
+      <li>Спроектировал интерфейсы web-страниц и мобильных экранов: CTR ключевых элементов вырос в среднем на 15–20%.</li>
+      <li>Проектировал и тестировал варианты прототипов, что повысило конверсию целевых сценариев.</li>
+      <li>Провёл A/B-тесты и UX-исследования (качественные и количественные): сократил ключевые флоу на 1–2 шага, доля успешного завершения выросла до ~85–90%.</li>
+      <li>Адаптировал дизайн под разные устройства и платформы и снизил число UI-багов после релиза.</li>
+      <li>Проводил дизайн-ревью реализованных интерфейсов: возвраты задач от разработки снизились примерно на 30%.</li>
+      <li>Участвовал в найме и онбординге дизайнеров: срок выхода на полную продуктивность сократился на 20%.</li>
+    </ul>
+  </div>
+</div>
+<h2>Образование и курсы</h2>
+<div class="ed"><div class="y">2024</div><div><b>Design your life — групповое наставничество</b><span>Иван Колле, UI/UX designer</span></div></div>
+<div class="ed"><div class="y">2022</div><div><b>UX/UI designer: с нуля до middle+</b><span>UPROCK school</span></div></div>
+
+
+<div class="foot"><span>Гора Алексей · UX/UI / Product Designer</span><span>1 / 2</span></div>
+</section>
+
+<section class="page">
+<h2 style="margin-top:0">Опыт работы · продолжение</h2>
+<div class="job">
+  <div class="when">Май 2022 — июнь 2023</div>
+  <div>
+    <h3>UX/UI-дизайнер</h3>
+    <div class="co">Проектная работа (фриланс)</div>
+    <p class="about">Web- и mobile-интерфейсы для стартапов и коммерческих сервисов (лендинги, SaaS, крипто-кошельки, внутренние системы): от идеи и MVP до доработки существующих решений.</p>
+    <ul>
+      <li>Проектировал пользовательские сценарии и структуру интерфейсов (User Flow, IA) под бизнес-задачи продуктов.</li>
+      <li>Делал UX-прототипы и финальные UI-макеты в Figma для web и mobile.</li>
+      <li>Упрощал пользовательские флоу и оптимизировал ключевые экраны, повышая конверсию и понятность интерфейсов.</li>
+      <li>Согласовывал требования с заказчиками и разработчиками, аргументировал решения, сопровождал реализацию.</li>
+    </ul>
+  </div>
+</div>
+<h2>Избранные проекты</h2>
+<div class="proj">
+  <div class="pr"><h4>Цифровая платформа для винодельни</h4><small>B2B SaaS · Web, iOS, Android</small><p>Единая система вместо бумажных журналов и Excel. Исследования, UX, UI, дизайн-система.</p></div>
+  <div class="pr"><h4>B2B CRM для финансовых продуктов</h4><small>В процессе · Web</small><p>Продукт с нуля: вход, 2FA, организации, отделы и права доступа. UX, UI, дизайн-система.</p></div>
+  <div class="pr"><h4>Tencore</h4><small>Сайт · Fintech</small><p>Агрегатор банковских услуг для тендеров: главная, услуги, калькулятор стоимости.</p></div>
+  <div class="pr"><h4>WebXile</h4><small>Сайт · Web</small><p>Сайт дизайн-студии: исследование, JTBD, IA, вайрфреймы, UI, адаптив, UI-kit.</p></div>
+  <div class="pr"><h4>Tietly</h4><small>Стартап · iOS</small><p>Соцсеть с крипто-кошельком: 100+ экранов, карта событий, чаты, NFT, материалы для питча.</p></div>
+  <div class="pr"><h4>MOUNT</h4><small>Концепт · iOS</small><p>Криптокошелёк с режимом обучения для новичков: исследования, UX, UI, UI-kit, прототип.</p></div>
+</div>
+
+<h2>Навыки</h2>
+<div class="two">
+  <div>
+    <div class="sk"><h5>Дизайн продукта</h5><div class="chips"><span class="chip">UX/UI</span><span class="chip">Product design</span><span class="chip">Design system</span><span class="chip">Web / Mobile</span><span class="chip">Адаптивный дизайн</span></div></div>
+    <div class="sk"><h5>UX и исследования</h5><div class="chips"><span class="chip">UX-исследования</span><span class="chip">A/B-тесты</span><span class="chip">CJM</span><span class="chip">User Flow</span><span class="chip">IA</span><span class="chip">JTBD</span></div></div>
+  </div>
+  <div>
+    <div class="sk"><h5>Инструменты и процесс</h5><div class="chips"><span class="chip">Figma</span><span class="chip">FigJam</span><span class="chip">Прототипирование</span><span class="chip">Дизайн-ревью</span></div></div>
+    <div class="sk"><h5>Работа в команде</h5><div class="chips"><span class="chip">PM, аналитики, разработка</span><span class="chip">Аргументация решений</span><span class="chip">Онбординг дизайнеров</span></div></div>
+  </div>
+</div>
+
+<h2>Дополнительно</h2>
+<dl class="kv">
+  <dt>Образование</dt><dd style="grid-column:2/5">Неоконченное высшее: Черноморское высшее военно-морское училище им. П. С. Нахимова (2021)</dd>
+  <dt>Языки</dt><dd>Русский — родной</dd>
+  <dt>Формат</dt><dd>Удалённо, готов к командировкам</dd>
+  <dt>Занятость</dt><dd>Полная, частичная, проектная</dd>
+  <dt>Гражданство</dt><dd>Россия, есть разрешение на работу</dd>
+  <dt>Права</dt><dd>Категории A, B</dd>
+</dl>
+</div>
+<div class="foot"><span>Гора Алексей · UX/UI / Product Designer</span><span>2 / 2</span></div>
+</section>
+</body></html>
