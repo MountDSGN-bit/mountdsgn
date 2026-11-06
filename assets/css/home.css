@@ -140,6 +140,7 @@ html.is-leaving body{opacity:0;transition:opacity .23s}
 
 /* ================= Mobile / tablet (<1100px) — Figma "Home · Mobile 390" ================= */
 @media (max-width:1099px){
+.fx-card{overflow:hidden}
 .fx .page{max-width:720px}
 .fx-hero{height:auto;display:flex;flex-direction:column;align-items:center;padding:24px 20px 24px;gap:14px;container-type:normal;overflow:hidden}
 .fx-hero .bg{object-fit:cover}
@@ -215,4 +216,5 @@ html.is-leaving body{opacity:0;transition:opacity .23s}
 .fx-sec-head h2{font-size:56px}.fx-info .lead{font-size:26px}.fx-info .right p{font-size:17px}
 .fx-card .lab{font-size:11px}.fx-card h3{font-size:16px}.fx-card .sub{font-size:12px}
 .fx-job .name b{font-size:22px}.fx-job li{font-size:17px}
+
 }
