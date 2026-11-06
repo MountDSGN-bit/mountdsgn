@@ -86,7 +86,7 @@
 }
 
 @media (max-width:1099px){
-.cs-hero .hpr{position:relative;top:auto;height:auto;display:flex;gap:8px;margin:18px -16px 0;align-items:flex-start;overflow:hidden;max-height:130px}
+.cs-hero .hpr{position:relative;top:auto;left:auto;width:calc(100% + 32px);height:auto;display:flex;gap:8px;margin:18px -16px 0;align-items:flex-start;overflow:hidden;max-height:130px}
 .cs-hero .hp{position:relative;left:auto!important;top:auto!important;width:auto;flex:1 1 0;border-radius:14px 14px 0 0}
 .cs-fig .fgi,.cs-arch .fgi,.cs-sol .rb .fgi{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .cs-fig .fgi img,.cs-arch .fgi img,.cs-sol .rb .fgi img{min-width:860px}
@@ -127,3 +127,148 @@
 }
 
 @media (max-width:1099px){.totop{right:16px;bottom:16px;width:44px;height:44px}}
+
+/* ===== Figma mobile 390 spec (shared sections) ===== */
+@media (max-width:1099px){
+.cs-hero{padding:32px 20px 32px}
+.cs-top{top:52px;left:50%;right:auto;width:auto;transform:translateX(-50%);justify-content:center;z-index:6}
+.cs-top .who{display:none}
+.cs-back{height:50px;padding:12px 20px;border-radius:31px;font-size:14px;gap:10px}
+.cs-back img{width:24px;height:24px}
+.cs-hero .card{padding:90px 20px 0;border-radius:30px;overflow:hidden}
+.cs-hero .in{gap:20px;align-items:center;text-align:center}
+.cs-hero .in .k{font:300 12px/1.25 Inter,sans-serif;color:#484848}
+.cs-hero h1{font-size:18px;line-height:1.1;font-weight:500;width:100%;max-width:310px;text-align:center}
+.cs-hero .in .d{font-size:14px;line-height:18px;width:100%!important;max-width:310px;color:#484848;text-align:center}
+.cs-hero .phones{display:flex;gap:5.3px;width:100%;margin:0;height:var(--mh,95px);overflow:hidden;align-items:flex-start}
+.cs-hero .ph{flex:1 1 0;width:auto;height:auto;aspect-ratio:73.6/159.5;padding:2.6px;border-radius:7.9px}
+.cs-hero .ph img{border-radius:6.6px;height:100%!important}
+.cs-meta{padding:0 20px 32px;gap:32px}
+.cs-meta .row{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:20px;border-radius:25px}
+.cs-meta .row>div,.cs-meta .row>div:last-child{width:auto;display:flex;flex-direction:column;gap:10px}
+.cs-meta .k{font-size:16px;line-height:1.4}.cs-meta .v{font-size:20px;line-height:1.35;white-space:normal!important}
+.cs-sum{padding:0 20px 32px;gap:30px}
+.cs-sum .r2{flex-direction:column;gap:15px}
+.cs-sum .col{gap:12px}
+.cs-sum .col .geo{font-size:24px;line-height:33.6px;letter-spacing:0;margin:0}
+.cs-sum .col p{font-size:16px;line-height:1.4;width:auto!important}
+.cs .tags{gap:12px}.cs .tag{font-size:11px;line-height:1.3;font-weight:500;padding:8px 16px}
+.cs-sum .nums{display:flex;flex-direction:column;gap:24px}
+.cs-sum .nums>div{padding:25px 20px;border-radius:25px;gap:10px}
+.cs-sum .nums b{font-size:30px;line-height:1.1}.cs-sum .nums span{font-size:18px;line-height:1.4;white-space:normal!important}
+.cs-out,.cs-ref{padding:32px 20px;gap:32px}
+.cs-out .hd,.cs-ref .hd{gap:20px}
+.cs-out .hd .eb,.cs-ref .hd .eb{font-size:14px;line-height:1.4}
+.cs-out h2,.cs-ref h2{font-size:44px;line-height:1.12;font-weight:500}
+.cs-out .grid{display:flex;flex-direction:column;gap:24px}
+.cs-out .grid>div{padding:24px 20px;border-radius:25px;gap:12px}
+.cs-out .grid b{font-size:44px;line-height:1.1;font-weight:500}.cs-out .grid span,.cs-out .grid>div:first-child span{font-size:20px;line-height:1.4;max-width:none}
+.cs-out .hd p.t{font-size:24px;line-height:1.45;font-weight:300;width:auto}
+.cs-ref .cards{gap:24px}
+.cs-ref .cards>div{padding:24px 20px;border-radius:25px;gap:16px}
+.cs-ref .cards span{font-size:14px;line-height:1.4}.cs-ref .cards p{font-size:19px;line-height:1.5}
+.cs .fx-foot{padding:24px 20px;gap:32px}
+.cs .fx-foot .tx{gap:10px}
+.cs .fx-foot .up{font-size:12px;line-height:normal}
+.cs .fx-foot .mid,.cs .fx-foot .down{font-size:30px;line-height:normal}
+.cs .fx-foot h2{gap:10px}
+.cs .fx-btn{align-self:flex-start;width:auto;height:58px;padding:14px 22px;border-radius:40px;background:transparent;border:1.5px solid #fff;color:#fff}
+.cs .fx-btn .t{color:#fff;font-size:18px}.cs .fx-btn .t img{filter:invert(1)}
+
+.cs-res,.cs-sol{padding:32px 20px;gap:32px}
+.cs-res .hd,.cs-sol .hd{gap:20px}
+.cs-res .hd .eb,.cs-sol .hd .eb{margin-bottom:-10px;font-size:14px;line-height:1.4}
+.cs-res .hd .geo,.cs-sol .hd .geo{font-size:24px;line-height:33.6px;letter-spacing:0;margin:0}
+.cs-res .hd p.t,.cs-sol .hd p.t{font-size:16px;line-height:1.4;width:auto}
+.cs-res .cards{flex-direction:column;gap:24px}
+.cs-res .cards>div{width:auto;padding:24px 20px;border-radius:25px;gap:12px}
+.cs-res .cards .t{gap:12px}
+.cs-res .cards .t b{font-size:24px;line-height:1.1}.cs-res .cards .t p,.cs-res .cards .t span{font-size:14px;line-height:1.4}
+.cs-res .cards .sol{border-radius:16px;padding:16px 20px;gap:6px}
+.cs-res .cards .sol span{font-size:14px}.cs-res .cards .sol p{font-size:17px;line-height:1.35}
+.cs-sol .scg{gap:16px}
+.cs-sol .scr{flex-direction:column;gap:16px}
+.cs-sol .scr>div{padding:24px;border-radius:24px;gap:10px;width:100%;flex:none}
+.cs-sol .scr b{font-size:22px;line-height:1.5;font-weight:500}
+.cs-sol .scr span{font-size:14px;line-height:1.5}
+.cs-sol .scr p{font-size:15px;line-height:1.5;font-weight:300;letter-spacing:0}
+.cs-sol .scs{gap:8.84px;margin-top:0;height:283.4px;align-items:flex-start}
+.cs-sol .sc{flex:none;width:122.3px;height:276px;margin-top:7.4px;border-radius:22px}
+
+.cs-oth{padding:32px 20px}
+.cs-oth>.in{gap:32px}
+.cs-oth .hd{gap:10px}
+.cs-oth h2{font-size:44px;line-height:1.5;font-weight:500;margin:0;max-width:5.2em;white-space:normal}
+.cs-oth .hd p{font-size:22px;line-height:1.5;font-weight:300;margin:0}
+.cs-oth .g,.cs-oth .r,.cs-oth .r.n{gap:32px}
+.cs-oth .r .fx-card{--u:calc(100cqw/825);height:calc(var(--u)*283 + 64.5px);border-radius:10.6px}
+.cs-oth .r .fx-card .cbg{border-radius:10.6px}
+.cs-oth .r .fx-card .bar{top:calc(var(--u)*283);height:64.5px;border-radius:0 0 10.6px 10.6px}
+.cs-oth .r .fx-card .bar .in{left:17px;right:17px}
+.cs-oth .r .fx-card .lab{font-size:8px;line-height:1.25}
+.cs-oth .r .fx-card h3{font-size:12px;line-height:1.3}
+.cs-oth .r .fx-card .sub{font-size:9px;line-height:1.3;margin-top:2px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-oth .r .fx-card .ic{width:32px;height:32px;border-radius:8.5px}
+.cs-oth .r.n .fx-card{--u:calc(100cqw/530);height:calc(var(--u)*283 + 100.4px);border-radius:16.5px}
+.cs-oth .r.n .fx-card .cbg{border-radius:16.5px}
+.cs-oth .r.n .fx-card .bar{top:calc(var(--u)*283);height:100.4px;border-radius:0 0 16.5px 16.5px}
+.cs-oth .r.n .fx-card .bar .in{left:26.4px;right:26.4px}
+.cs-oth .r.n .fx-card .lab{font-size:11px;line-height:1.3}
+.cs-oth .r.n .fx-card h3{font-size:16px;line-height:1.3}
+.cs-oth .r.n .fx-card .sub{font-size:11px;line-height:1.3;margin-top:3px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs-oth .r.n .fx-card .ic{width:40px;height:40px;border-radius:11px}
+
+.cs-ctx{padding:32px 20px}
+.cs-ctx .row{flex-direction:column;gap:32px}
+.cs-ctx .l{width:auto;gap:10px}
+.cs-ctx .l .body{gap:20px}
+.cs-ctx .intro{gap:20px}
+.cs-ctx .intro p{font-size:16px;line-height:1.4;width:auto}
+.cs-ctx .mid{gap:10px;justify-content:flex-start}
+.cs-ctx .mid .sub{gap:10px}
+.cs-ctx .dk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cs-ctx .dk>div{padding:16px 20px;border-radius:20px;gap:6px}
+.cs-ctx .dk b,.cs-ctx.sm .dk b{font-size:24px!important;line-height:1.1;white-space:normal}
+.cs-ctx .dk span{font-size:14px;line-height:1.4}
+.cs-ctx .tn{flex-direction:column;gap:10px}
+.cs-ctx .tn>div{padding:16px 20px;border-radius:16px;gap:6px;flex:none}
+.cs-ctx .tn b{font-size:24px;line-height:1.1;white-space:normal}
+.cs-ctx .tn span{font-size:14px;line-height:1.4;max-width:none!important}
+.cs-ctx .mid>.tn{margin:0}
+.cs-ctx .us,.cs-ctx .us>div{flex-direction:column;gap:24px;height:auto}
+.cs-ctx .us>div>.u{flex:none}
+.cs-ctx .u{padding:24px 20px;border-radius:25px;gap:16px}
+.cs-ctx .u .h{gap:8px}
+.cs-ctx .u .h span,.cs-ctx .u .q{font-size:14px;line-height:1.4}
+.cs-ctx .u .h b{font-size:24px;line-height:1.1}
+.cs-ctx .u .q{gap:8px}
+.cs-ctx .u .q span{font-size:14px;min-height:0!important}
+.cs-ctx.fq .u .q span{min-height:0}
+
+.cs-hero .hpr{position:relative;left:auto;top:auto;width:100%;height:var(--mh,95px);margin-top:20px;display:flex;gap:2.7px;overflow:hidden;align-items:flex-start;max-height:none}
+.cs-hero .hp{position:relative;left:auto!important;top:auto!important;flex:1 1 0;width:auto;padding:2.7px;border-radius:8.1px;background:rgba(172,172,172,.2);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.cs-hero .hp img{border-radius:6px 6px 0 0}
+.cs-hero .himg{position:relative;left:auto;top:auto;width:100%;height:var(--mh,95px);margin:20px 0 0;padding:12px 12px 0;border-radius:12px 12px 0 0;overflow:hidden;background:rgba(172,172,172,.2);box-shadow:none;aspect-ratio:auto}
+.cs-hero .himg img{border-radius:12px 12px 0 0;height:auto!important;object-fit:cover}
+.cs-hero .shots{flex-direction:row;gap:2.7px;width:100%;height:var(--mh,95px);overflow:hidden;align-items:flex-start}
+.cs-hero .shot{flex:1 1 0;width:auto;height:auto!important;padding:2.7px;border-radius:8.1px;background:rgba(172,172,172,.2)}
+.cs-hero .shot .im{border-radius:6px!important;height:auto}
+.cs-hero .shot .im[style*="height"]{height:104px!important}
+
+.cs-ctx .us>div{flex:none}
+.cs-ctx .us.pe{gap:16px;height:auto;overflow:visible}
+
+.cs-sol .sum{flex-direction:column;gap:16px}
+.cs-sol .sum>div{padding:24px;border-radius:20px;gap:10px;width:auto}
+.cs-sol .sum span{font-size:14px;line-height:1.5}
+.cs-sol .sum b{font-size:20px;line-height:1.25;font-weight:600}
+.cs-sol .sum p{font-size:15px;line-height:1.5;width:auto}
+.cs-sol .board{padding:12px;gap:12px;border-radius:24px}
+.cs-sol .board .rc{border-radius:10px}
+
+.cs-res .cards>div{height:auto!important;min-height:0!important;justify-content:flex-start}
+.cs-res .cards .t{height:auto!important;min-height:0!important}
+
+.cs-hero .card{position:relative;overflow:hidden}
+.cs-hero .bgi{overflow:hidden}
+}

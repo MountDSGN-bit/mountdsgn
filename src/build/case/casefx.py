@@ -58,23 +58,25 @@ def footer():
 </section>'''
 
 # ---- sections ----
+def MH(d): return f' style="--mh:{d["hero_mh"]}px"' if d.get('hero_mh') else ''
+
 def hero(d):
     if d.get('hero_phones'):
         ph=''.join(f'<div class="ph">{image(n,"Экран приложения","width:100%;height:100%;object-fit:contain",eager=True)}</div>' for n in d['hero_phones'])
         shots=f'<div class="phones">{ph}</div>'
-        return f'''<section class="cs-hero"><div class="card">
+        return f'''<section class="cs-hero"><div class="card"{MH(d)}>
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
 <div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p>{shots}</div>
 <div class="shine"></div></div></section>'''
     if d.get('hero_pair'):
         im=''.join(f'<div class="hp" style="left:{t[2]}u;top:{t[3]}u">{image(t[0],t[1],"width:100%;height:auto;display:block",eager=True)}</div>' for t in d['hero_pair'])
-        return f'''<section class="cs-hero"><div class="card">
+        return f'''<section class="cs-hero"><div class="card"{MH(d)}>
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
 <div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p></div>
 <div class="hpr">{im}</div>
 <div class="shine"></div></div></section>'''
     if d.get('hero_img'):
-        return f'''<section class="cs-hero"><div class="card">
+        return f'''<section class="cs-hero"><div class="card"{MH(d)}>
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
 <div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p></div>
 <div class="himg">{image(d['hero_img'], d.get('hero_alt',''), 'width:100%;height:100%;object-fit:cover', eager=True)}</div>
@@ -86,7 +88,7 @@ def hero(d):
             shots += f'<div class="shot" style="height:396u"><div class="im" style="aspect-ratio:{w}/{h}">{image(s["img"], s.get("alt",""), "inset:0;width:100%;height:100%;object-fit:cover", eager=True)}</div></div>'
         else:
             shots += f'<div class="shot"><div class="im" style="height:375u">{image(s["img"], s.get("alt",""), f"left:0;width:100%;height:{s["h"]}%;top:{s["t"]}%")}</div></div>'
-    return f'''<section class="cs-hero"><div class="card">
+    return f'''<section class="cs-hero"><div class="card"{MH(d)}>
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
 <div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p><div class="shots">{shots}</div></div>
 <div class="shine"></div></div></section>'''

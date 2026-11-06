@@ -2,69 +2,70 @@
 /* ================= Mobile / tablet (<1100px) — Figma "Home · Mobile 390" ================= */
 @media (max-width:1099px){
 .fx .page{max-width:720px}
-.fx-hero{height:auto;display:flex;flex-direction:column;align-items:center;padding:20px 24px 96px;gap:14px;container-type:normal;overflow:hidden}
+.fx-hero{height:auto;display:flex;flex-direction:column;align-items:center;padding:24px 20px 24px;gap:14px;container-type:normal;overflow:hidden}
 .fx-hero .bg{object-fit:cover}
 .fx-hero .fx-head{display:contents;animation:none}
-.fx-head .who{position:relative;z-index:6;order:0;align-self:flex-start;font:300 13px/1.3 Inter,sans-serif}
-.fx-head .aside{position:relative;z-index:6;order:5;width:auto;max-width:34ch;text-align:center;font:300 13px/1.4 Inter,sans-serif}
-.fx-hero .hw,.fx-hero .t{position:relative;left:auto;top:auto;font-size:42px;line-height:1.1;text-align:center;z-index:2}
+.fx-head .who{position:relative;z-index:6;order:0;align-self:center;text-align:center;margin:0;font:300 13px/16px Inter,sans-serif}
+.fx-head .aside{position:relative;z-index:6;order:5;width:100%;max-width:350px;margin:0;text-align:center;font:300 12px/15px Inter,sans-serif}
+.fx-hero .hw,.fx-hero .t{position:relative;left:auto;top:auto;font-size:38px;line-height:1.05;text-align:center;z-index:2}
 .fx-hero .yr,.fx-frame{display:none}
-.fx-hero .t-a{order:1;margin-top:18px}
-.fx-fig{position:relative;left:auto;top:auto;transform:none;order:2;width:210px;height:auto;aspect-ratio:528/482;animation:none;margin-block:-4px}
+.fx-hero .t-a{order:1;margin-top:0}
+.fx-fig{position:relative;left:auto;top:auto;transform:none;order:2;width:clamp(210px,53.85vw,420px);height:auto;aspect-ratio:528/482;animation:none;margin-block:0}
 .js .fx-fig{animation:fx-up .9s .3s cubic-bezier(.23,1,.32,1) both}
 .fx-hero .t-b{order:3}
 .fx-nav{bottom:16px;gap:8px;padding:8px 14px;border-radius:16px}
 .fx-nav a{width:44px;height:44px}
 .fx-nav a::after{display:none}
 
-.fx-main{padding:56px 20px 48px;gap:56px}
-.fx-info{flex-direction:column;gap:20px}
-.fx-info .lead{width:auto;font-size:18px;line-height:1.3}
-.fx-info .right{width:auto;align-items:flex-start;gap:16px}
-.fx-info .right p{width:auto;text-align:left;font-size:14px;line-height:1.4}
-.fx-resume{font-size:18px;gap:12px;justify-content:flex-start}
-.fx-resume img{width:36px;height:36px}
+.fx-main{padding:32px 20px 32px;gap:32px}
+.fx-info{flex-direction:column;align-items:center;gap:8px;padding:28px 0 8px}
+.fx-info .lead{width:100%;max-width:332px;margin:0;text-align:center;font:400 14px/1.3 Poppins,"Montserrat Cyr",sans-serif}
+.fx-info .right{width:100%;align-items:center;gap:8px}
+.fx-info .right p{width:100%;max-width:303px;margin:0;text-align:center;font-size:12px;line-height:1.4}
+.fx-resume{font-size:18px;line-height:normal;gap:8px;padding:0 16px;height:48px;justify-content:center}
+.fx-resume img{width:48px;height:48px}
 .fx-cases{gap:32px}
-.fx-sec-head{flex-direction:column;align-items:flex-start;gap:10px}
-.fx-sec-head h2{font-size:44px;line-height:1.13}
-.fx-sec-head p{font-size:16px;line-height:1.4}
-.fx-grid{display:flex;flex-direction:column;gap:32px;width:100%;container-type:inline-size}
-.fx-card{--u:calc(100cqw/825);width:100%;height:calc(var(--u)*283 + 84px);border-radius:11px}
-.fx-card .cbg{border-radius:11px}
-.fx-card .bar{border-radius:0 0 11px 11px;top:calc(var(--u)*283);height:84px}
-.fx-card .bar .in{left:16px;right:16px;top:50%;transform:translateY(-50%);width:auto;align-items:center}
+.fx-sec-head{flex-direction:column;align-items:flex-start;gap:0}
+.fx-cases .fx-sec-head{align-items:center}.fx-cases .fx-sec-head .sec-p{display:none}
+.fx-sec-head h2{font-size:44px;line-height:1.5;margin:0}.fx-work .fx-sec-head h2{font-size:32px}
+.fx-sec-head p{font-size:16px;line-height:1.5;font-weight:300;margin:0}
+.fx-grid{display:flex;flex-direction:column;gap:45px;width:100%;container-type:inline-size}
+.fx-card{--u:calc(100cqw/825);width:100%;height:calc(var(--u)*283 + 64.5px);border-radius:10.6px}
+.fx-card .cbg{border-radius:10.6px}
+.fx-card .bar{border-radius:0 0 10.6px 10.6px;top:calc(var(--u)*283);height:64.5px}
+.fx-card .bar .in{left:17px;right:17px;top:50%;transform:translateY(-50%);width:auto;align-items:center}
 .fx-card .txt{width:auto;gap:2px;min-width:0;white-space:normal}
-.fx-card .lab{font-size:9px;line-height:1.3}
-.fx-card h3{font-size:13px;line-height:1.3}
-.fx-card .sub{font-size:10px;line-height:1.3;margin-top:2px!important;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.fx-card .ic{width:36px;height:36px}
+.fx-card .lab{font-size:8px;line-height:1.25}
+.fx-card h3{font-size:12px;line-height:1.3}
+.fx-card .sub{font-size:9px;line-height:1.3;margin-top:2px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fx-card .ic{width:32px;height:32px;border-radius:8.5px}
 
-.fx-work{padding:40px 20px}
-.fx-work .in{gap:28px}
+.fx-work{padding:24px 20px}
+.fx-work .in{gap:32px;padding:0 20px}
 .fx-jobs{gap:24px}
-.fx-job{gap:14px}
-.fx-job .name{padding:16px;border-radius:16px;gap:12px}
-.fx-job .name b{font-size:18px;line-height:1.3;white-space:normal}
-.fx-job .name small{font-size:13px;gap:8px}
-.fx-job .name small i{width:8px;height:8px}
+.fx-job{gap:20px}
+.fx-job .name{padding:16px;border-radius:25px;gap:0}
+.fx-job .name b{font-size:18px;line-height:1.5;white-space:normal}.fx-job .name .tt{gap:6px}
+.fx-job .name small{font-size:13px;line-height:1.5;gap:10px}
+.fx-job .name small i{width:11.75px;height:11.75px}
 .fx-job .fx-chev{padding:8px 10px;border-radius:14px}
 .fx-job .fx-chev img{width:18px;height:18px}
-.fx-job ul{gap:12px;padding-left:4px}
-.fx-job li{font-size:15px;line-height:1.45;gap:10px}
-.fx-job li img{width:14px;height:14px;margin-top:4px}
+.fx-job ul{gap:14px;padding:0 4px}
+.fx-job li{font-size:15px;line-height:1.4;gap:10px}
+.fx-job li img{width:16px;height:16px;margin-top:0}
 
-.fx-foot{height:auto;display:flex;flex-direction:column;gap:32px;padding:32px 20px 40px}
+.fx-foot{height:auto;display:flex;flex-direction:column;gap:32px;padding:24px 20px 24px}
 .fx-foot .tx,.fx-foot .line,.fx-foot dl,.fx-btn{position:relative;left:auto;top:auto}
-.fx-foot .tx{width:auto;height:auto;white-space:normal;display:flex;flex-direction:column;gap:8px}
+.fx-foot .tx{width:auto;height:auto;white-space:normal;display:flex;flex-direction:column;gap:0}
 .fx-foot .tx p,.fx-foot .tx span{position:static!important}
-.fx-foot .up{font-size:12px}
-.fx-foot .mid,.fx-foot .down{font-size:24px;line-height:1.2;display:block!important}
+.fx-foot .up{font-size:11px;line-height:1.2}
+.fx-foot .mid,.fx-foot .down{font-size:26.9px;line-height:1.2;display:block!important}
 .fx-foot h2{display:flex;flex-direction:column}
 .fx-foot .line{width:auto}
-.fx-foot dl{flex-direction:column;gap:20px}
+.fx-foot dl{flex-direction:column;gap:32px}
 .fx-foot dl>div{width:auto;height:auto;display:flex;flex-direction:column;gap:2px}
-.fx-foot dt,.fx-foot dd{position:static;font-size:15px}
-.fx-foot dd{font-size:20px}
+.fx-foot dt,.fx-foot dd{position:static;font-size:15.2px;line-height:1.5;margin:0}.fx-foot dt{margin-bottom:-3.4px}
+.fx-foot dd{font-size:20.3px;line-height:25px}
 .fx-btn{width:auto;height:52px;border-radius:26px;background:#fff;display:flex;align-items:center;justify-content:center;align-self:stretch}
 .fx-btn img.a,.fx-btn img.b{display:none}
 .fx-btn .t{position:static;transform:none;font-size:18px;gap:10px}
