@@ -64,19 +64,19 @@ def hero(d):
         shots=f'<div class="phones">{ph}</div>'
         return f'''<section class="cs-hero"><div class="card">
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
-<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d">{E(d['lead'])}</p>{shots}</div>
+<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p>{shots}</div>
 <div class="shine"></div></div></section>'''
     if d.get('hero_pair'):
         im=''.join(f'<div class="hp" style="left:{t[2]}u;top:{t[3]}u">{image(t[0],t[1],"width:100%;height:auto;display:block",eager=True)}</div>' for t in d['hero_pair'])
         return f'''<section class="cs-hero"><div class="card">
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
-<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d">{E(d['lead'])}</p></div>
+<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p></div>
 <div class="hpr">{im}</div>
 <div class="shine"></div></div></section>'''
     if d.get('hero_img'):
         return f'''<section class="cs-hero"><div class="card">
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
-<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d">{E(d['lead'])}</p></div>
+<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p></div>
 <div class="himg">{image(d['hero_img'], d.get('hero_alt',''), 'width:100%;height:100%;object-fit:cover', eager=True)}</div>
 <div class="shine"></div></div></section>'''
     shots = ''
@@ -88,16 +88,16 @@ def hero(d):
             shots += f'<div class="shot"><div class="im" style="height:375u">{image(s["img"], s.get("alt",""), f"left:0;width:100%;height:{s["h"]}%;top:{s["t"]}%")}</div></div>'
     return f'''<section class="cs-hero"><div class="card">
 <div class="bgi"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" fetchpriority="high"></div>
-<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d">{E(d['lead'])}</p><div class="shots">{shots}</div></div>
+<div class="in"><p class="k">{E(d['kicker'])}</p><h1>{E(d['title'])}</h1><p class="d"{(' style="width:%su"'%d['lead_w']) if d.get('lead_w') else ''}>{E(d['lead'])}</p><div class="shots">{shots}</div></div>
 <div class="shine"></div></div></section>'''
 
 def meta(d):
-    cells = ''.join(f'<div><span class="k">{E(k)}</span><span class="v">{E(v)}</span></div>' for k,v in d['meta'])
+    cells = ''.join(f'<div><span class="k">{E(t[0])}</span><span class="v"{" style=\"white-space:nowrap\"" if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in d['meta'])
     return f'<section class="cs-meta"><div class="ln"></div><div class="row" data-reveal>{cells}</div></section>'
 
 def summary(d):
     tags = ''.join(f'<span class="tag">{E(t)}</span>' for t in d['tags'])
-    nums = ''.join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a,b in d['nums'])
+    nums = ''.join(f'<div><b>{E(t[0])}</b><span{" style=\"white-space:nowrap\"" if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in d['nums'])
     return f'''<section class="cs-sum"><div class="r2">
 <div class="col" data-reveal><h2 class="geo">МОЯ РОЛЬ</h2><p style="width:733u">{E(d['role'])}</p><div class="tags">{tags}</div></div>
 <div class="col" data-reveal style="--i:1"><h2 class="geo">КОРОТКО О КЕЙСЕ</h2><p style="width:634u">{E(d['about'])}</p></div></div>
@@ -111,7 +111,7 @@ def context(d):
     if d['ctx'].get('img'):
         c=d['ctx']; return figsec('ctxf',c['lab'],c['h'],c['p'],c['img'],c['alt'])
     c = d['ctx']
-    dk = ''.join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a,b in c['dark'])
+    dk = ''.join(f'<div><b>{E(t[0])}</b><span{(" style=\"max-width:%su\""%t[2]) if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in c['dark'])
     def tn(rows): return '<div class="tn">'+''.join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a,b in rows)+'</div>'
     users = ''
     for col in c['users']:
@@ -121,7 +121,7 @@ def context(d):
             users += f'<div class="u"><div class="h"><span>{E(sub)}</span><b>{E(name)}</b></div>{qs}</div>'
         users += '</div>'
     pers = ''.join(f'<div class="pi" style="aspect-ratio:{dims(n)[0]}/{dims(n)[1]}">{image(n, a, "width:100%;height:100%;object-fit:cover")}</div>' for n,a in c.get('personas',[]))
-    return f'''<section class="cs-ctx"><div class="row">
+    return f'''<section class="cs-ctx{' fq' if c.get('fixq') else ''}"><div class="row">
 <div class="l" data-reveal><span class="eb">01 · КОНТЕКСТ</span><div class="body">
 <div class="intro"><h2 class="geo up">{E(c['h'])}</h2><p>{E(c['p'])}</p></div>
 <div class="mid"><div class="sub"><span class="eb">{E(c['dark_lab'])}</span><div class="dk">{dk}</div></div>{tn(c['tn'][0])}{tn(c['tn'][1])}</div>
@@ -132,9 +132,12 @@ def research(d):
     r = d['res']
     cards = ''
     for i,cd in enumerate(r['cards']):
-        if len(cd)==4: lab,a,b,c = cd
+        tw=None
+        if len(cd)==5: lab,a,b,c,tw = cd
+        elif len(cd)==4 and isinstance(cd[3],int): a,b,c,tw = cd; lab=f"{r.get('cl','ВЫВОД')} {i+1}"
+        elif len(cd)==4: lab,a,b,c = cd
         else: a,b,c = cd; lab=f"{r.get('cl','ВЫВОД')} {i+1}"
-        cards += f'<div data-reveal style="--i:{i}"><div class="t"><span>{E(lab)}</span><b>{E(a)}</b><p>{E(b)}</p></div><div class="sol"><span>→ {E(r.get('sl','РЕШЕНИЕ'))}</span><p>{E(c)}</p></div></div>'
+        cards += f'<div data-reveal style="--i:{i}"><div class="t"><span>{E(lab)}</span><b{(' style="max-width:%su"'%tw) if tw else ''}>{E(a).replace(chr(10),'<br>')}</b><p>{E(b)}</p></div><div class="sol"><span>→ {E(r.get('sl','РЕШЕНИЕ'))}</span><p>{E(c)}</p></div></div>'
     return f'''<section class="cs-res"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2 class="geo">{E(r['h'])}</h2><p class="t">{E(r['p'])}</p></div><div class="cards">{cards}</div></section>'''
 
 def arch(d):
@@ -166,11 +169,11 @@ def solutions(d):
 def results(d):
     o = d['out']
     g = ''.join(f'<div data-reveal style="--i:{i%3}"><b>{E(a)}</b><span>{E(b)}</span></div>' for i,(a,b) in enumerate(o['grid']))
-    return f'''<section class="cs-out"><div class="hd" data-reveal><span class="eb">{E(o['lab'])}</span><h2>{E(o['h'])}</h2><p class="t">{E(o['p'])}</p></div><div class="grid">{g}</div></section>'''
+    return f'''<section class="cs-out"><div class="hd" data-reveal><span class="eb">{E(o['lab'])}</span><h2>{E(o['h'])}</h2><p class="t"{(' style="width:%su"'%o['pw']) if o.get('pw') else ''}>{E(o['p'])}</p></div><div class="grid">{g}</div></section>'''
 
 def reflection(d):
     r = d['ref']
-    c = ''.join(f'<div data-reveal style="--i:{i}"><span>{E(a)}</span><p>{E(b)}</p></div>' for i,(a,b) in enumerate(r['cards']))
+    c = ''.join(f'<div data-reveal style="--i:{i}{";align-self:flex-start" if (i==0 and r.get("hug0")) else ""}"><span>{E(a)}</span><p>{E(b)}</p></div>' for i,(a,b) in enumerate(r['cards']))
     return f'''<section class="cs-ref"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2>{E(r['h'])}</h2></div><div class="cards">{c}</div></section>'''
 
 def build(slug, d):

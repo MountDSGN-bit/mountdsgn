@@ -71,8 +71,9 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-ctx .tn>div{flex:1 0 0;min-width:0;background:var(--tint);border-radius:calc(var(--u)*16);padding:calc(var(--u)*16) calc(var(--u)*20);display:flex;flex-direction:column;gap:calc(var(--u)*6)}
 .cs-ctx .tn b{font-weight:600;font-size:calc(var(--u)*28);line-height:1.1;white-space:nowrap}
 .cs-ctx .tn span{font-size:calc(var(--u)*14);line-height:1.4;color:#888}
-.cs-ctx .us{flex:1 0 0;display:flex;gap:calc(var(--u)*24)}
+.cs-ctx .us{flex:1 0 0;display:flex;gap:calc(var(--u)*24);height:calc(var(--u)*596)}
 .cs-ctx .us>div{flex:1 0 0;display:flex;flex-direction:column;gap:calc(var(--u)*24)}
+.cs-ctx .us>div>.u{flex:1 1 0;min-height:0}
 .cs-ctx .u{background:#f5f5f5;border-radius:calc(var(--u)*25);padding:calc(var(--u)*32);display:flex;flex-direction:column;gap:calc(var(--u)*16)}
 .cs-ctx .u .h{display:flex;flex-direction:column;gap:calc(var(--u)*8)}
 .cs-ctx .u .h span{font-size:calc(var(--u)*14);line-height:1.4;color:#888}
@@ -85,7 +86,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-res .hd{display:flex;flex-direction:column;gap:calc(var(--u)*20)}
 .cs-res .hd p.t{font-size:calc(var(--u)*16);line-height:1.4;width:calc(var(--u)*569)}
 .cs-res .hd .geo{color:var(--ac-l)}
-.cs-res .hd .eb{color:#fff}
+.cs-res .hd .eb{color:#fff;margin-bottom:calc(var(--u)*-10)}
 .cs-res .cards{display:flex;gap:calc(var(--u)*24);align-items:stretch}
 .cs-res .cards>div{width:calc(var(--u)*535);background:#363638;border-radius:calc(var(--u)*25);padding:calc(var(--u)*36);display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*12)}
 .cs-res .cards .t{display:flex;flex-direction:column;gap:calc(var(--u)*12)}
@@ -100,6 +101,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol{padding:calc(var(--u)*100) calc(var(--u)*133);display:flex;flex-direction:column;gap:calc(var(--u)*72);overflow:hidden}
 .cs-sol .hd{display:flex;flex-direction:column;gap:calc(var(--u)*18)}
 .cs-sol .hd .geo{color:var(--ac-d)}
+.cs-sol .hd .eb{margin-bottom:calc(var(--u)*-8)}
 .cs-sol .hd p.t{font-size:calc(var(--u)*16);line-height:1.4}
 .cs-sol .sum{display:flex;gap:calc(var(--u)*16)}
 .cs-sol .sum>div{flex:1 0 0;min-width:0;background:#f5f5f5;border-radius:calc(var(--u)*20);padding:calc(var(--u)*24);display:flex;flex-direction:column;gap:calc(var(--u)*10)}
@@ -116,7 +118,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-out .hd{display:flex;flex-direction:column;gap:calc(var(--u)*20)}
 .cs-out .hd .eb{color:#fff}
 .cs-out h2{font-weight:500;font-size:calc(var(--u)*72);line-height:1.12}
-.cs-out .hd p.t{font-weight:300;font-size:calc(var(--u)*24);line-height:1.45;color:#bebebe;width:calc(var(--u)*1100)}
+.cs-out .hd p.t{font-weight:300;font-size:calc(var(--u)*24);line-height:1.45;color:#bebebe;width:calc(var(--u)*1300)}
 .cs-out .grid{display:grid;grid-template-columns:repeat(3,calc(var(--u)*535));gap:calc(var(--u)*24)}
 .cs-out .grid>div{background:#363638;border-radius:calc(var(--u)*25);padding:calc(var(--u)*36);display:flex;flex-direction:column;gap:calc(var(--u)*12)}
 .cs-out .grid b{font-weight:500;font-size:calc(var(--u)*80);line-height:1.1}
@@ -136,7 +138,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-oth>.in{width:calc(var(--u)*1694);display:flex;flex-direction:column;gap:calc(var(--u)*66)}
 .cs-oth .hd{display:flex;justify-content:space-between;align-items:flex-end}
 .cs-oth h2{font-weight:500;font-size:calc(var(--u)*100);line-height:1.13;white-space:nowrap}
-.cs-oth .hd p{font-weight:300;font-size:calc(var(--u)*22);line-height:1.5;width:calc(var(--u)*271)}
+.cs-oth .hd p{font-weight:300;font-size:calc(var(--u)*22);line-height:1.5;width:calc(var(--u)*290);margin-right:calc(var(--u)*-19)}
 .cs-oth .g{display:flex;flex-direction:column;gap:calc(var(--u)*48)}
 .cs-oth .r{display:flex;gap:calc(var(--u)*48)}
 .cs-oth .r.n{gap:calc(var(--u)*51)}
@@ -160,7 +162,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol .sc{flex:1 0 0;height:calc(var(--u)*375);border-radius:calc(var(--u)*14);overflow:hidden;cursor:zoom-in}
 
 .cs-hero .himg{position:absolute;left:calc(var(--u)*189);top:calc(var(--u)*360);width:calc(var(--u)*1142);height:calc(var(--u)*400);border-radius:calc(var(--u)*25);overflow:hidden;box-shadow:0 0 0 calc(var(--u)*10) rgba(172,172,172,.2)}
-.cs-ctx .us.pe{flex-direction:column;gap:calc(var(--u)*16)}
+.cs-ctx .us.pe{flex-direction:column;gap:calc(var(--u)*16);height:calc(var(--u)*596);overflow:hidden}
 .cs-ctx .us.pe .pi{border-radius:calc(var(--u)*25);overflow:hidden;width:100%}
 
 .wide .cs-hero{padding-left:calc(var(--u)*133);padding-right:calc(var(--u)*133)}
@@ -170,8 +172,8 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-fig .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .cs-fig .fgi{width:100%}
 .cs-fig img,.cs-sol .rwx img{display:block;width:100%;height:auto}
-.cs-sol.rows .rwg{display:flex;flex-direction:column;gap:calc(var(--u)*56)}
-.cs-sol.rows{gap:calc(var(--u)*56)}
+.cs-sol.rows .rwg{display:flex;flex-direction:column;gap:calc(var(--u)*72)}
+.cs-sol.rows{gap:calc(var(--u)*72)}
 .wide .cs-hero h1{width:calc(var(--u)*1172)}
 .wide .cs-hero .in .d{width:calc(var(--u)*1230)}
 .wide .cs-hero h1{width:auto;white-space:nowrap}
@@ -179,6 +181,10 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .wide .cs-meta .row>div:last-child,.mf .cs-meta .row>div:last-child{width:auto;flex:1 1 0}
 .cs-fig .fgi,.cs-sol .rwx .fgi,.cs-sol .board .rc,.cs-sol .sc{cursor:zoom-in}
 .cs-fig .fgi:focus-visible,.cs-sol .rwx .fgi:focus-visible,.cs-sol .rc:focus-visible,.cs-sol .sc:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.wide .cs-sum .nums span{font-size:calc(var(--u)*16)}
+.cs-out .grid>div:first-child span{max-width:calc(var(--u)*310)}
+.cs-ctx.fq .u .q span{min-height:calc(var(--u)*40)}
+.cs-sol .scr p{letter-spacing:-.02em}
 
 /* ================= Mobile / tablet (<1100px) ================= */
 @media (max-width:1099px){
@@ -275,3 +281,5 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol.rows .rwg{gap:24px}
 }
 @media (max-width:1099px){.wide .cs-hero h1{white-space:normal;width:auto}.wide .cs-hero .in .d{width:auto}.cs-meta .row>div,.wide .cs-meta .row>div{width:auto;flex:none}}
+@media (max-width:1099px){.cs-ctx .us.pe{height:auto;overflow:visible}.cs-oth .hd p{margin-right:0;width:auto}}
+@media (max-width:1099px){.cs-ctx .us{height:auto}.cs-ctx .us>div>.u{flex:none}}

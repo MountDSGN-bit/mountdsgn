@@ -71,8 +71,9 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-ctx .tn>div{flex:1 0 0;min-width:0;background:var(--tint);border-radius:16u;padding:16u 20u;display:flex;flex-direction:column;gap:6u}
 .cs-ctx .tn b{font-weight:600;font-size:28u;line-height:1.1;white-space:nowrap}
 .cs-ctx .tn span{font-size:14u;line-height:1.4;color:#888}
-.cs-ctx .us{flex:1 0 0;display:flex;gap:24u}
+.cs-ctx .us{flex:1 0 0;display:flex;gap:24u;height:596u}
 .cs-ctx .us>div{flex:1 0 0;display:flex;flex-direction:column;gap:24u}
+.cs-ctx .us>div>.u{flex:1 1 0;min-height:0}
 .cs-ctx .u{background:#f5f5f5;border-radius:25u;padding:32u;display:flex;flex-direction:column;gap:16u}
 .cs-ctx .u .h{display:flex;flex-direction:column;gap:8u}
 .cs-ctx .u .h span{font-size:14u;line-height:1.4;color:#888}
@@ -85,7 +86,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-res .hd{display:flex;flex-direction:column;gap:20u}
 .cs-res .hd p.t{font-size:16u;line-height:1.4;width:569u}
 .cs-res .hd .geo{color:var(--ac-l)}
-.cs-res .hd .eb{color:#fff}
+.cs-res .hd .eb{color:#fff;margin-bottom:-10u}
 .cs-res .cards{display:flex;gap:24u;align-items:stretch}
 .cs-res .cards>div{width:535u;background:#363638;border-radius:25u;padding:36u;display:flex;flex-direction:column;justify-content:space-between;gap:12u}
 .cs-res .cards .t{display:flex;flex-direction:column;gap:12u}
@@ -100,6 +101,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol{padding:100u 133u;display:flex;flex-direction:column;gap:72u;overflow:hidden}
 .cs-sol .hd{display:flex;flex-direction:column;gap:18u}
 .cs-sol .hd .geo{color:var(--ac-d)}
+.cs-sol .hd .eb{margin-bottom:-8u}
 .cs-sol .hd p.t{font-size:16u;line-height:1.4}
 .cs-sol .sum{display:flex;gap:16u}
 .cs-sol .sum>div{flex:1 0 0;min-width:0;background:#f5f5f5;border-radius:20u;padding:24u;display:flex;flex-direction:column;gap:10u}
@@ -116,7 +118,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-out .hd{display:flex;flex-direction:column;gap:20u}
 .cs-out .hd .eb{color:#fff}
 .cs-out h2{font-weight:500;font-size:72u;line-height:1.12}
-.cs-out .hd p.t{font-weight:300;font-size:24u;line-height:1.45;color:#bebebe;width:1100u}
+.cs-out .hd p.t{font-weight:300;font-size:24u;line-height:1.45;color:#bebebe;width:1300u}
 .cs-out .grid{display:grid;grid-template-columns:repeat(3,535u);gap:24u}
 .cs-out .grid>div{background:#363638;border-radius:25u;padding:36u;display:flex;flex-direction:column;gap:12u}
 .cs-out .grid b{font-weight:500;font-size:80u;line-height:1.1}
@@ -136,7 +138,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-oth>.in{width:1694u;display:flex;flex-direction:column;gap:66u}
 .cs-oth .hd{display:flex;justify-content:space-between;align-items:flex-end}
 .cs-oth h2{font-weight:500;font-size:100u;line-height:1.13;white-space:nowrap}
-.cs-oth .hd p{font-weight:300;font-size:22u;line-height:1.5;width:271u}
+.cs-oth .hd p{font-weight:300;font-size:22u;line-height:1.5;width:290u;margin-right:-19u}
 .cs-oth .g{display:flex;flex-direction:column;gap:48u}
 .cs-oth .r{display:flex;gap:48u}
 .cs-oth .r.n{gap:51u}
@@ -160,7 +162,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol .sc{flex:1 0 0;height:375u;border-radius:14u;overflow:hidden;cursor:zoom-in}
 
 .cs-hero .himg{position:absolute;left:189u;top:360u;width:1142u;height:400u;border-radius:25u;overflow:hidden;box-shadow:0 0 0 10u rgba(172,172,172,.2)}
-.cs-ctx .us.pe{flex-direction:column;gap:16u}
+.cs-ctx .us.pe{flex-direction:column;gap:16u;height:596u;overflow:hidden}
 .cs-ctx .us.pe .pi{border-radius:25u;overflow:hidden;width:100%}
 
 .wide .cs-hero{padding-left:133u;padding-right:133u}
@@ -170,8 +172,8 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-fig .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .cs-fig .fgi{width:100%}
 .cs-fig img,.cs-sol .rwx img{display:block;width:100%;height:auto}
-.cs-sol.rows .rwg{display:flex;flex-direction:column;gap:56u}
-.cs-sol.rows{gap:56u}
+.cs-sol.rows .rwg{display:flex;flex-direction:column;gap:72u}
+.cs-sol.rows{gap:72u}
 .wide .cs-hero h1{width:1172u}
 .wide .cs-hero .in .d{width:1230u}
 .wide .cs-hero h1{width:auto;white-space:nowrap}
@@ -179,3 +181,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .wide .cs-meta .row>div:last-child,.mf .cs-meta .row>div:last-child{width:auto;flex:1 1 0}
 .cs-fig .fgi,.cs-sol .rwx .fgi,.cs-sol .board .rc,.cs-sol .sc{cursor:zoom-in}
 .cs-fig .fgi:focus-visible,.cs-sol .rwx .fgi:focus-visible,.cs-sol .rc:focus-visible,.cs-sol .sc:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.wide .cs-sum .nums span{font-size:16u}
+.cs-out .grid>div:first-child span{max-width:310u}
+.cs-ctx.fq .u .q span{min-height:40u}
+.cs-sol .scr p{letter-spacing:-.02em}
