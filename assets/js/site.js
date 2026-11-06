@@ -93,6 +93,23 @@
     fxNav.addEventListener('focusin', () => fxNav.classList.remove('away'));
   }
 
+  /* ---------- Resume arrow: scroll-linked slide (mobile) ---------- */
+  const rImg = document.querySelector('.fx-resume img');
+  if (rImg && !reduce.matches) {
+    const mq = matchMedia('(max-width:1099px)');
+    let tick = false;
+    const upd = () => {
+      tick = false;
+      if (!mq.matches) { rImg.style.transform = ''; return; }
+      const r = rImg.getBoundingClientRect(), vh = innerHeight;
+      const p = Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.55)));
+      rImg.style.transition = 'none';
+      rImg.style.transform = 'translate(' + (p * 6).toFixed(2) + 'px,' + (-p * 6).toFixed(2) + 'px)';
+    };
+    const on = () => { if (!tick) { tick = true; requestAnimationFrame(upd); } };
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on); upd();
+  }
+
   /* ---------- Lightbox for screens ---------- */
   const lb = document.createElement('div');
   lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Просмотр изображения');
