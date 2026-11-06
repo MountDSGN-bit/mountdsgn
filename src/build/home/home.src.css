@@ -1,0 +1,129 @@
+/* Home — pixel values from Figma 157:1754 (1920 wide). `Nu` = N design px, scaled with viewport. */
+@font-face{font-family:"Mr De Haviland";font-display:swap;src:url(../fonts/MrDeHaviland.woff) format("woff")}
+:root{--u:calc(min(100vw,1920px)/1920);--ink:#000;--dark:#28282a}
+.fx{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr",system-ui,sans-serif;overflow-x:hidden}
+.fx *{box-sizing:border-box}
+.fx img{max-width:none;display:block}
+.fx .page{width:100%;max-width:1920px;margin-inline:auto;position:relative}
+
+/* ---------- Hero 1920x1080 ---------- */
+.fx-hero{position:relative;height:1080u;overflow:hidden;container-type:inline-size}
+.fx-hero .bg{position:absolute;left:0;top:-.03%;width:100%;height:100.14%;object-fit:cover}
+.fx-hero .hw{position:absolute;white-space:nowrap;line-height:normal;margin:0;color:#000}
+.fx-hero .yr{font-family:"Mr De Haviland",cursive;font-size:280u;top:386u}
+.fx-hero .y1{left:479u}.fx-hero .y2{left:1195u}
+.fx-hero .t{font-weight:600;font-size:180u}
+.fx-hero .t-a{left:calc(50% - 685u);top:117u}
+.fx-hero .t-b{left:calc(50% - 787u);top:700u}
+.fx-head{position:absolute;left:60u;top:50u;width:1800u;height:71u;display:flex;justify-content:space-between;font:300 20u/normal Inter,system-ui,sans-serif;z-index:6}
+.fx-head a{transition:opacity .2s}.fx-head a:hover{opacity:.6}
+.fx-head .who{display:block}.fx-head .who a,.fx-head .who span{display:block}
+.fx-head .aside{width:488u;text-align:right}
+.fx-frame{position:absolute;left:397u;top:410u;width:1127u;height:267u}
+.fx-frame img{width:100%;height:100%}
+.fx-dot{position:absolute;width:14u;height:14u;background:#000}
+.fx-fig{position:absolute;left:50%;top:292u;width:528u;height:482u;transform:translateX(-50%);z-index:3;pointer-events:none}
+.fx-fig img{width:100%;height:100%;object-fit:cover;object-position:bottom}
+
+/* ---------- Nav ---------- */
+.fx-nav{position:fixed;left:50%;bottom:50px;transform:translateX(-50%);z-index:50;display:flex;gap:11px;align-items:center;padding:10px 20px;background:#171717;border-radius:18px;overflow:visible}
+.fx-nav a{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:31px;background:#262626;transition:background-color .2s,transform .16s cubic-bezier(.23,1,.32,1)}
+.fx-nav a img{width:24px;height:24px}
+.fx-nav a[aria-current]{background:#d4d4d4}
+.fx-nav a:active{transform:scale(.94)}
+@media(hover:hover){.fx-nav a:not([aria-current]):hover{background:#3a3a3a}}
+.fx-nav a::after{content:attr(data-label);position:absolute;bottom:calc(100% + 18px);left:50%;transform:translate(-50%,4px);background:#171717;color:#fff;font:400 12px/1 Inter,sans-serif;padding:7px 10px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
+@media(hover:hover){.fx-nav a:hover::after{opacity:1;transform:translate(-50%,0)}}
+
+/* ---------- Info + cases ---------- */
+.fx-main{padding:100u 113u;display:flex;flex-direction:column;gap:100u;align-items:center}
+.fx-info{display:flex;justify-content:space-between;width:100%}
+.fx-info .lead{font-weight:400;font-size:33u;line-height:1.25;width:1001u;margin:0}
+.fx-info .right{width:458u;display:flex;flex-direction:column;gap:5u;align-items:flex-end}
+.fx-info .right p{font-weight:300;font-size:22u;line-height:1.25;color:#616161;text-align:right;width:452u;margin:0}
+.fx-resume{display:flex;gap:10u;align-items:center;justify-content:flex-end;font:400 32u/normal Inter,sans-serif;color:#000}
+.fx-resume img{width:48u;height:48u;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.fx-resume:hover img{transform:translate(4u,-4u)}}
+.fx-cases{display:flex;flex-direction:column;gap:110u;align-items:center;width:100%}
+.fx-sec-head{display:flex;justify-content:space-between;align-items:flex-end;width:100%}
+.fx-sec-head h2{white-space:nowrap;font-weight:500;font-size:100u;line-height:1.13;margin:0}
+.fx-sec-head p{font-weight:300;font-size:22u;line-height:1.5;margin:0}
+.fx-cases .sec-p{white-space:nowrap}
+.fx-grid{display:grid;grid-template-columns:repeat(2,825u);column-gap:48u;row-gap:100u;justify-content:center}
+.fx-card{position:relative;display:block;height:435u;border-radius:25u;color:#fff}
+.fx-card .cbg{position:absolute;inset:0;overflow:hidden;border-radius:25u}
+.fx-card .cbg img{position:absolute;left:0;top:-.04%;width:100%;height:136.29%}
+.fx-card .clip{position:absolute;overflow:hidden;top:-60u;height:370u;width:414u}
+.fx-card .clip.l{left:205u}.fx-card .clip.c{left:calc(50% - .5px);transform:translateX(-50%)}
+.fx-card .clip.w{width:693u;height:397u;left:50%;transform:translateX(-50%)}
+.fx-card .clip>div{position:absolute;transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.fx-card .clip>div>img{position:absolute}
+@media(hover:hover){.fx-card:hover .clip>div{transform:translateY(-8u) scale(1.02)}}
+.fx-card .bar{position:absolute;left:0;top:283u;width:100%;height:152u;background:#252525;border-radius:0 0 25u 25u;overflow:hidden}
+.fx-card .bar .in{position:absolute;left:40u;top:20u;width:745u;display:flex;align-items:flex-end;justify-content:space-between}
+.fx-card .txt{width:506u;display:flex;flex-direction:column;gap:10u;white-space:nowrap}
+.fx-card .lab{font-weight:400;font-size:16u;line-height:1.5;color:#eeab8c}
+.fx-card h3{font-weight:700;font-size:24u;line-height:1.5;margin:0}
+.fx-card .sub{font-weight:400;font-size:16u;line-height:1.5;color:rgba(255,255,255,.7);margin-top:8u}
+.fx-card .ic{width:76u;height:76u;flex:none;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.fx-card:hover .ic{transform:translate(4u,-4u)}}
+.fx-card:active .ic{transform:scale(.95)}
+
+/* ---------- Work ---------- */
+.fx-work{padding:66u 113u;background:#fff}
+.fx-work .in{display:flex;flex-direction:column;gap:66u}
+.fx-jobs{display:flex;flex-direction:column;gap:25u}
+.fx-job{display:flex;flex-direction:column;gap:20u}
+.fx-job .name{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;background:#f5f5f5;border-radius:25u;padding:20u 25u;color:var(--dark);cursor:pointer}
+.fx-job .name .tt{display:flex;flex-direction:column;gap:10u}
+.fx-job .name b{font-size:32u;line-height:1.5;font-weight:600;white-space:nowrap}
+.fx-job.m .name b{font-weight:500}
+.fx-job .name small{display:flex;align-items:center;gap:10u;font-size:18u;line-height:1.5;font-weight:400;color:#888}
+.fx-job .name small i{width:11.75u;height:11.75u;border-radius:50%;background:#888}
+.fx-job .fx-chev{background:var(--dark);border-radius:20u;padding:20u;display:grid;place-items:center;flex:none;transition:background-color .2s}
+.fx-job .fx-chev img{width:46u;height:46u;transform:rotate(-90deg);transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.fx-job .name[aria-expanded=false] .chev img{transform:rotate(90deg)}
+.fx-job .name:active .chev{transform:scale(.96)}
+@media(hover:hover){.fx-job .name:hover .chev{background:#000}}
+.fx-job .body{display:grid;grid-template-rows:1fr;transition:grid-template-rows .4s cubic-bezier(.77,0,.175,1)}
+.fx-job .body[hidden]{display:grid;grid-template-rows:0fr;visibility:hidden}
+.fx-job .body>div{overflow:hidden}
+.fx-job ul{display:flex;flex-direction:column;gap:15u;padding-left:25u;margin:0;list-style:none}
+.fx-job li{display:flex;gap:10u;align-items:flex-start;font-weight:300;font-size:22u;line-height:1.5}
+.fx-job li img{width:16u;height:16u;margin-top:8.5u;flex:none}
+
+/* ---------- Footer ---------- */
+.fx-foot{position:relative;background:var(--dark);height:634u;color:#fff;overflow:hidden}
+.fx-foot .tx{position:absolute;left:133u;top:66u;width:1000u;height:214u;white-space:nowrap}
+.fx-foot .tx p{position:absolute;left:0;margin:0}
+.fx-foot .up{top:0;font:400 20u/normal "IBM Plex Mono",monospace}
+.fx-foot .mid{top:28u;font:400 77u/1.2 Poppins,"Montserrat Cyr",sans-serif}
+.fx-foot .down{top:121u;font:400 77u/1.2 Poppins,"Montserrat Cyr",sans-serif}
+.fx-foot .line{position:absolute;left:133u;top:393u;width:1654u;height:1px;background:#fff}
+.fx-foot dl{position:absolute;left:133u;top:506u;margin:0;display:flex;gap:57u}
+.fx-foot dl>div{width:414u;height:53u;position:relative}
+.fx-foot dt{position:absolute;top:-4u;left:0;font:400 18u/1.5 Poppins,"Montserrat Cyr",sans-serif;color:#a3a3a3}
+.fx-foot dd{position:absolute;top:24u;left:0;margin:0;font:400 24u/normal Inter,sans-serif;white-space:nowrap}
+.fx-btn{position:absolute;left:1328u;top:252u;width:278u;height:278u;display:block;transition:transform .35s cubic-bezier(.23,1,.32,1)}
+.fx-btn img.a,.fx-btn img.b{position:absolute}
+.fx-btn img.a{inset:0;width:100%;height:100%}
+.fx-btn img.b{left:15u;top:15u;width:248u;height:248u}
+.fx-btn .t{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;gap:10u;align-items:center;white-space:nowrap;font:500 26u/normal Poppins,"Montserrat Cyr",sans-serif;color:var(--dark)}
+.fx-btn .t img{width:33u;height:33u;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.fx-btn:hover{transform:scale(1.04)}.fx-btn:hover .t img{transform:translate(3u,-3u)}}
+.fx-btn:active{transform:scale(.97)}
+
+/* ---------- Motion ---------- */
+.js .fx [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);transition-delay:calc(var(--i,0)*80ms)}
+.js .fx [data-reveal].is-in{opacity:1;transform:none}
+@keyframes fx-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fx-fig{from{opacity:0;transform:translateX(-50%) translateY(40px) scale(.96)}to{opacity:1;transform:translateX(-50%)}}
+.js .fx-hero .t,.js .fx-hero .yr,.js .fx-frame,.js .fx-hero .fx-head{animation:fx-up .9s cubic-bezier(.23,1,.32,1) both}
+.js .fx-hero .t-a{animation-delay:.05s}.js .fx-hero .yr{animation-delay:.15s}.js .fx-hero .t-b{animation-delay:.25s}.js .fx-frame{animation-delay:.2s}.js .fx-hero .fx-head{animation-delay:.4s}
+.js .fx-fig{animation:fx-fig 1s .3s cubic-bezier(.23,1,.32,1) both}
+html.is-leaving body{opacity:0;transition:opacity .23s}
+@media(prefers-reduced-motion:reduce){.js .fx [data-reveal]{opacity:1;transform:none;transition:none}.js .fx *{animation:none!important;transition:none!important}}
+.skip{position:absolute;left:12px;top:-60px;background:#000;color:#fff;padding:10px 16px;border-radius:10px;z-index:100}.skip:focus{top:12px}
+:focus-visible{outline:2px solid #000;outline-offset:3px}
+.fx-foot :focus-visible,.fx-nav :focus-visible{outline-color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
