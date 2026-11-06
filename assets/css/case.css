@@ -48,7 +48,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sum .col{display:flex;flex-direction:column;gap:calc(var(--u)*12)}
 .cs-sum .col p{font-size:calc(var(--u)*16);line-height:1.4}
 .cs-sum .tags{display:flex;gap:calc(var(--u)*12);flex-wrap:wrap}
-.cs .tag{background:var(--tint);color:var(--ac);border-radius:calc(var(--u)*100);padding:calc(var(--u)*8) calc(var(--u)*16);font-weight:500;font-size:calc(var(--u)*11);line-height:1.3;white-space:nowrap}
+.cs .tag{background:var(--tint);color:var(--ac);border-radius:calc(var(--u)*100);padding:calc(var(--u)*8) calc(var(--u)*16);font-weight:600;font-size:calc(var(--u)*11);line-height:1.3;white-space:nowrap}
 .cs-sum .nums{display:flex;gap:calc(var(--u)*24)}
 .cs-sum .nums>div{flex:1 0 0;background:#f5f5f5;border-radius:calc(var(--u)*25);padding:calc(var(--u)*25) calc(var(--u)*36);display:flex;flex-direction:column;gap:calc(var(--u)*10)}
 .cs-sum .nums b{font-weight:600;font-size:calc(var(--u)*40);line-height:1.1}
@@ -389,7 +389,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sum .col{gap:12px}
 .cs-sum .col .geo{font-size:24px;line-height:33.6px;letter-spacing:0;margin:0}
 .cs-sum .col p{font-size:16px;line-height:1.4;width:auto!important}
-.cs .tags{gap:12px}.cs .tag{font-size:11px;line-height:1.3;font-weight:500;padding:8px 16px}
+.cs .tags{gap:8px}.cs .tag{font-size:11px;line-height:1.3;font-weight:600;padding:8px 14px}
 .cs-sum .nums{display:flex;flex-direction:column;gap:24px}
 .cs-sum .nums>div{padding:25px 20px;border-radius:25px;gap:10px}
 .cs-sum .nums b{font-size:30px;line-height:1.1}.cs-sum .nums span{font-size:18px;line-height:1.4;white-space:normal!important}
@@ -510,4 +510,38 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-hero .bgi{overflow:hidden}
 
 .cs-hero .hpr{margin:20px 0 0!important}
+
+.cs-meta .row{gap:18px 14px;padding:16px;border-radius:20px}
+.cs-meta .row>div,.cs-meta .row>div:last-child{gap:6px}
+.cs-meta .k{font-size:12px;line-height:1.3}
+.cs-meta .v{font-size:14px;line-height:1.35}
+
+.cs-meta .row{padding:14px;gap:16px 10px}
+.cs-meta .v{font-size:13px;line-height:1.3;letter-spacing:-.01em}
+
+.cs-sum .nums span{font-size:18px!important;line-height:1.4!important}
+.wide .cs-sum .nums span{font-size:16px!important}
+.cs-sum .nums b{font-size:30px!important}
+
+.cs-res .cards .t b{max-width:none!important;width:100%;font-size:24px!important;line-height:1.1!important}
+.cs-res .cards .t{gap:16px}
+.cs-res .cards .t>span:first-child{font-size:14px!important}
+.cs-res .cards .t p{font-size:14px!important;line-height:1.4!important}
+
+.cs-ref .cards .t b{max-width:none!important;width:100%;font-size:24px!important;line-height:1.1!important}
+.cs-ref .cards .t{gap:16px}
+.cs-ref .cards .t>span:first-child{font-size:14px!important}
+.cs-ref .cards .t p{font-size:14px!important;line-height:1.4!important}
+
+.cs-res .hd p,.cs-sol .hd p,.cs-out .hd p,.cs-ref .hd p,.cs-ctx .hd p,.cs-arch .hd p{width:auto!important;max-width:none!important}
+
+.cs-ctx .dk span{max-width:none!important;width:auto!important}
+
+.cs-hero .ph{border-radius:10.7%/4.95%!important}
+.cs-hero .ph img{border-radius:9.7%/4.3%!important}
+
+.cs-ctx.sm .sub{gap:16px!important}
+.cs-ctx.sm .sub>.tn{margin-top:0!important}
+
+.cs-ctx.sm .mid{gap:16px!important}
 }
