@@ -71,6 +71,20 @@
 .fx-btn img.a,.fx-btn img.b{display:none}
 .fx-btn .t{position:static;transform:none;font-size:18px;gap:10px}
 .fx-btn .t img{width:22px;height:22px}
+
+.fx-card{--u:calc(100cqw/530)!important;height:calc(var(--u)*283 + 100.4px);border-radius:16.5px}
+.fx-card .cbg{border-radius:16.5px}
+.fx-card .bar{top:calc(var(--u)*283);height:100.4px;border-radius:0 0 16.5px 16.5px}
+.fx-card .bar .in{left:26.4px;right:26.4px}
+.fx-card .lab{font-size:11px;line-height:1.3}
+.fx-card h3{font-size:16px;line-height:1.3}
+.fx-card .sub{font-size:11px;line-height:1.3;margin-top:3px!important}
+.fx-card .ic{width:40px;height:40px;border-radius:11px}
+
+.fx-card .clip.kc{left:calc(50% - 1px)!important;transform:translateX(-50%)!important;top:calc(var(--u)*16.11)!important;width:calc(var(--u)*414)!important;height:calc(var(--u)*294)!important}
+.fx-card .clip.kc>div{left:calc(var(--u)*31)!important;top:calc(var(--u)*-.11)!important;width:calc(var(--u)*352)!important;height:calc(var(--u)*414)!important;transform:none!important}
+.fx-card .clip.kp{left:calc(50% + .5px)!important;transform:translateX(-50%)!important;top:0!important;width:calc(var(--u)*531)!important;height:calc(var(--u)*303)!important}
+.fx-card .clip.kp>div{left:calc(var(--u)*8)!important;top:calc(var(--u)*17)!important;width:calc(var(--u)*517)!important;height:calc(var(--u)*297)!important;transform:none!important}
 }
 @media (max-width:1099px) and (min-width:600px){
 .fx-hero .t{font-size:64px}.fx-fig{width:300px}

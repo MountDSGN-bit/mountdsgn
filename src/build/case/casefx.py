@@ -37,7 +37,7 @@ def pcard(slug, wide, i=0):
     info_w = 745 if wide else 450
     return f'''<a class="fx-card" href="{slug}.html" data-reveal style="--i:{i};width:{W}u">
 <div class="cbg"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" loading="lazy" decoding="async"></div>
-<div class="clip" style="{clip}"><div style="{inner}"><img src="assets/img/{im}.webp" alt="Обложка кейса: {E(title)}" width="{iw}" height="{ih}" loading="lazy" decoding="async" style="height:{h}%;left:{l}%;top:{t}%;width:{w}%"></div></div>
+<div class="clip {"kc" if kind=="c" else "kp"}" style="{clip}"><div style="{inner}"><img src="assets/img/{im}.webp" alt="Обложка кейса: {E(title)}" width="{iw}" height="{ih}" loading="lazy" decoding="async" style="height:{h}%;left:{l}%;top:{t}%;width:{w}%"></div></div>
 <div class="bar" style="width:100%"><div class="in" style="width:{info_w}u"><div class="txt" style="width:auto"><span class="lab">{E(lab)}</span><div><h3>{E(title)}</h3><p class="sub" style="margin-top:8px">{E(sub)}</p></div></div>{ico('325c1','class="ic" aria-hidden="true"')}</div></div>
 </a>'''
 
