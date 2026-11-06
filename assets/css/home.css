@@ -23,12 +23,13 @@
 .fx-frame img{width:100%;height:100%}
 .fx-dot{position:absolute;width:calc(var(--u)*14);height:calc(var(--u)*14);background:#000}
 .fx-fig{position:absolute;left:50%;top:calc(var(--u)*292);width:calc(var(--u)*528);height:calc(var(--u)*482);transform:translateX(-50%);z-index:3;pointer-events:none}
-.fx-fig img{width:100%;height:100%;object-fit:cover;object-position:bottom}
+.fx-fig img{width:100%;height:100%;object-fit:fill}
 
 /* ---------- Nav ---------- */
 .fx-nav{position:fixed;left:50%;bottom:50px;transform:translateX(-50%);z-index:50;display:flex;gap:11px;align-items:center;padding:10px 20px;background:#171717;border-radius:18px;overflow:visible}
 .fx-nav a{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:31px;background:#262626;transition:background-color .2s,transform .16s cubic-bezier(.23,1,.32,1)}
-.fx-nav a img{width:24px;height:24px}
+.fx-nav a .ic{display:block;width:24px;height:24px;background:#d4d4d4;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;transition:background-color .2s}
+.fx-nav a[aria-current] .ic{background:#171717}
 .fx-nav a[aria-current]{background:#d4d4d4}
 .fx-nav a:active{transform:scale(.94)}
 @media(hover:hover){.fx-nav a:not([aria-current]):hover{background:#3a3a3a}}
@@ -53,20 +54,22 @@
 .fx-card{position:relative;display:block;height:calc(var(--u)*435);border-radius:calc(var(--u)*25);color:#fff}
 .fx-card .cbg{position:absolute;inset:0;overflow:hidden;border-radius:calc(var(--u)*25)}
 .fx-card .cbg img{position:absolute;left:0;top:-.04%;width:100%;height:136.29%}
-.fx-card .clip{position:absolute;overflow:hidden;top:calc(var(--u)*-60);height:calc(var(--u)*370);width:calc(var(--u)*414)}
+.fx-card .clip{position:absolute;top:calc(var(--u)*-60);height:calc(var(--u)*370);width:calc(var(--u)*414)}
 .fx-card .clip.l{left:calc(var(--u)*205)}.fx-card .clip.c{left:calc(50% - .5px);transform:translateX(-50%)}
 .fx-card .clip.w{width:calc(var(--u)*693);height:calc(var(--u)*397);left:50%;transform:translateX(-50%)}
-.fx-card .clip>div{position:absolute;transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.fx-card .clip>div{position:absolute;overflow:hidden;transform-origin:50% 100%;transition:transform .5s cubic-bezier(.23,1,.32,1)}
 .fx-card .clip>div>img{position:absolute}
-@media(hover:hover){.fx-card:hover .clip>div{transform:translateY(calc(var(--u)*-8)) scale(1.02)}}
+@media(hover:hover){.fx-card:hover .clip>div{transform:scale(1.04)}}
 .fx-card .bar{position:absolute;left:0;top:calc(var(--u)*283);width:100%;height:calc(var(--u)*152);background:#252525;border-radius:0 0 calc(var(--u)*25) calc(var(--u)*25);overflow:hidden}
 .fx-card .bar .in{position:absolute;left:calc(var(--u)*40);top:calc(var(--u)*20);width:calc(var(--u)*745);display:flex;align-items:flex-end;justify-content:space-between}
 .fx-card .txt{width:calc(var(--u)*506);display:flex;flex-direction:column;gap:calc(var(--u)*10);white-space:nowrap}
 .fx-card .lab{font-weight:400;font-size:calc(var(--u)*16);line-height:1.5;color:#eeab8c}
 .fx-card h3{font-weight:700;font-size:calc(var(--u)*24);line-height:1.5;margin:0}
 .fx-card .sub{font-weight:400;font-size:calc(var(--u)*16);line-height:1.5;color:rgba(255,255,255,.7);margin-top:calc(var(--u)*8)}
-.fx-card .ic{width:calc(var(--u)*76);height:calc(var(--u)*76);flex:none;transition:transform .3s cubic-bezier(.23,1,.32,1)}
-@media(hover:hover){.fx-card:hover .ic{transform:translate(calc(var(--u)*4),calc(var(--u)*-4))}}
+.fx-card .ic{display:block;width:calc(var(--u)*76);height:calc(var(--u)*76);flex:none;background:#fff;border-radius:calc(var(--u)*20);transition:transform .3s cubic-bezier(.23,1,.32,1)}
+.fx-card .ic svg{display:block;width:100%;height:100%}
+.fx-card .ic .ar{transform-origin:38px 38px;transition:transform .45s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.fx-card:hover .ic .ar{transform:rotate(45deg)}}
 .fx-card:active .ic{transform:scale(.95)}
 
 /* ---------- Work ---------- */
@@ -82,7 +85,7 @@
 .fx-job .name small i{width:calc(var(--u)*11.75);height:calc(var(--u)*11.75);border-radius:50%;background:#888}
 .fx-job .fx-chev{background:var(--dark);border-radius:calc(var(--u)*20);padding:calc(var(--u)*20);display:grid;place-items:center;flex:none;transition:background-color .2s}
 .fx-job .fx-chev img{width:calc(var(--u)*46);height:calc(var(--u)*46);transform:rotate(-90deg);transition:transform .35s cubic-bezier(.23,1,.32,1)}
-.fx-job .name[aria-expanded=false] .chev img{transform:rotate(90deg)}
+.fx-job .name[aria-expanded=false] .fx-chev img{transform:rotate(90deg)}
 .fx-job .name:active .chev{transform:scale(.96)}
 @media(hover:hover){.fx-job .name:hover .chev{background:#000}}
 .fx-job .body{display:grid;grid-template-rows:1fr;transition:grid-template-rows .4s cubic-bezier(.77,0,.175,1)}
@@ -127,6 +130,12 @@ html.is-leaving body{opacity:0;transition:opacity .23s}
 :focus-visible{outline:2px solid #000;outline-offset:3px}
 .fx-foot :focus-visible,.fx-nav :focus-visible{outline-color:#fff}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* hero fits the viewport height on short desktop windows (keeps the 16:9 composition clear of the dock) */
+@media (min-width:1100px){
+.fx-hero{--u:calc(min(100vw,1920px,100svh*16/9)/1920)}
+.fx-hero .yr,.fx-hero .fx-head,.fx-hero .fx-frame{translate:calc((100cqw - 1920*var(--u))/2) 0}
+}
 
 /* ================= Mobile / tablet (<1100px) — Figma "Home · Mobile 390" ================= */
 @media (max-width:1099px){

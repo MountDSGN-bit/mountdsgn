@@ -23,12 +23,13 @@
 .fx-frame img{width:100%;height:100%}
 .fx-dot{position:absolute;width:14u;height:14u;background:#000}
 .fx-fig{position:absolute;left:50%;top:292u;width:528u;height:482u;transform:translateX(-50%);z-index:3;pointer-events:none}
-.fx-fig img{width:100%;height:100%;object-fit:cover;object-position:bottom}
+.fx-fig img{width:100%;height:100%;object-fit:fill}
 
 /* ---------- Nav ---------- */
 .fx-nav{position:fixed;left:50%;bottom:50px;transform:translateX(-50%);z-index:50;display:flex;gap:11px;align-items:center;padding:10px 20px;background:#171717;border-radius:18px;overflow:visible}
 .fx-nav a{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:31px;background:#262626;transition:background-color .2s,transform .16s cubic-bezier(.23,1,.32,1)}
-.fx-nav a img{width:24px;height:24px}
+.fx-nav a .ic{display:block;width:24px;height:24px;background:#d4d4d4;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;transition:background-color .2s}
+.fx-nav a[aria-current] .ic{background:#171717}
 .fx-nav a[aria-current]{background:#d4d4d4}
 .fx-nav a:active{transform:scale(.94)}
 @media(hover:hover){.fx-nav a:not([aria-current]):hover{background:#3a3a3a}}
@@ -53,20 +54,22 @@
 .fx-card{position:relative;display:block;height:435u;border-radius:25u;color:#fff}
 .fx-card .cbg{position:absolute;inset:0;overflow:hidden;border-radius:25u}
 .fx-card .cbg img{position:absolute;left:0;top:-.04%;width:100%;height:136.29%}
-.fx-card .clip{position:absolute;overflow:hidden;top:-60u;height:370u;width:414u}
+.fx-card .clip{position:absolute;top:-60u;height:370u;width:414u}
 .fx-card .clip.l{left:205u}.fx-card .clip.c{left:calc(50% - .5px);transform:translateX(-50%)}
 .fx-card .clip.w{width:693u;height:397u;left:50%;transform:translateX(-50%)}
-.fx-card .clip>div{position:absolute;transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.fx-card .clip>div{position:absolute;overflow:hidden;transform-origin:50% 100%;transition:transform .5s cubic-bezier(.23,1,.32,1)}
 .fx-card .clip>div>img{position:absolute}
-@media(hover:hover){.fx-card:hover .clip>div{transform:translateY(-8u) scale(1.02)}}
+@media(hover:hover){.fx-card:hover .clip>div{transform:scale(1.04)}}
 .fx-card .bar{position:absolute;left:0;top:283u;width:100%;height:152u;background:#252525;border-radius:0 0 25u 25u;overflow:hidden}
 .fx-card .bar .in{position:absolute;left:40u;top:20u;width:745u;display:flex;align-items:flex-end;justify-content:space-between}
 .fx-card .txt{width:506u;display:flex;flex-direction:column;gap:10u;white-space:nowrap}
 .fx-card .lab{font-weight:400;font-size:16u;line-height:1.5;color:#eeab8c}
 .fx-card h3{font-weight:700;font-size:24u;line-height:1.5;margin:0}
 .fx-card .sub{font-weight:400;font-size:16u;line-height:1.5;color:rgba(255,255,255,.7);margin-top:8u}
-.fx-card .ic{width:76u;height:76u;flex:none;transition:transform .3s cubic-bezier(.23,1,.32,1)}
-@media(hover:hover){.fx-card:hover .ic{transform:translate(4u,-4u)}}
+.fx-card .ic{display:block;width:76u;height:76u;flex:none;background:#fff;border-radius:20u;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+.fx-card .ic svg{display:block;width:100%;height:100%}
+.fx-card .ic .ar{transform-origin:38px 38px;transition:transform .45s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.fx-card:hover .ic .ar{transform:rotate(45deg)}}
 .fx-card:active .ic{transform:scale(.95)}
 
 /* ---------- Work ---------- */
@@ -82,7 +85,7 @@
 .fx-job .name small i{width:11.75u;height:11.75u;border-radius:50%;background:#888}
 .fx-job .fx-chev{background:var(--dark);border-radius:20u;padding:20u;display:grid;place-items:center;flex:none;transition:background-color .2s}
 .fx-job .fx-chev img{width:46u;height:46u;transform:rotate(-90deg);transition:transform .35s cubic-bezier(.23,1,.32,1)}
-.fx-job .name[aria-expanded=false] .chev img{transform:rotate(90deg)}
+.fx-job .name[aria-expanded=false] .fx-chev img{transform:rotate(90deg)}
 .fx-job .name:active .chev{transform:scale(.96)}
 @media(hover:hover){.fx-job .name:hover .chev{background:#000}}
 .fx-job .body{display:grid;grid-template-rows:1fr;transition:grid-template-rows .4s cubic-bezier(.77,0,.175,1)}
@@ -127,3 +130,9 @@ html.is-leaving body{opacity:0;transition:opacity .23s}
 :focus-visible{outline:2px solid #000;outline-offset:3px}
 .fx-foot :focus-visible,.fx-nav :focus-visible{outline-color:#fff}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* hero fits the viewport height on short desktop windows (keeps the 16:9 composition clear of the dock) */
+@media (min-width:1100px){
+.fx-hero{--u:calc(min(100vw,1920px,100svh*16/9)/1920)}
+.fx-hero .yr,.fx-hero .fx-head,.fx-hero .fx-frame{translate:calc((100cqw - 1920*var(--u))/2) 0}
+}

@@ -85,7 +85,7 @@
     lastFocus = fr; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt;
     lb.classList.add('on'); document.body.style.overflow = 'hidden'; lbBtn.focus({ preventScroll: true });
   };
-  document.querySelectorAll('.shot .fr, .cs-sol .rc, .cs-sol .sc, .cs-fig .fgi, .cs-sol .rwx .fgi').forEach(fr => {
+  document.querySelectorAll('.shot .fr, .cs-sol .rc, .cs-sol .sc, .cs-fig .fgi, .cs-arch .fgi, .cs-sol .rwx .fgi').forEach(fr => {
     fr.tabIndex = 0; fr.setAttribute('role', 'button'); fr.setAttribute('aria-label', 'Открыть: ' + (fr.querySelector('img')?.alt || 'изображение'));
     fr.addEventListener('click', () => open(fr));
     fr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fr); } });

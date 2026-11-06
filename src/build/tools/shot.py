@@ -5,7 +5,7 @@ async def main(pages, widths, full=True):
     async with async_playwright() as p:
         b = await p.chromium.launch()
         for w in widths:
-            ctx = await b.new_context(viewport={'width':w,'height':900 if w>800 else 844}, reduced_motion='reduce', device_scale_factor=1)
+            ctx = await b.new_context(viewport={'width':w,'height':1080 if w>800 else 844}, reduced_motion='reduce', device_scale_factor=1)
             pg = await ctx.new_page()
             logs=[]
             pg.on('console', lambda m: logs.append(m.type+': '+m.text) if m.type in ('error','warning') else None)

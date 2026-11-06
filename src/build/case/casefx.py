@@ -111,19 +111,25 @@ def context(d):
     if d['ctx'].get('img'):
         c=d['ctx']; return figsec('ctxf',c['lab'],c['h'],c['p'],c['img'],c['alt'])
     c = d['ctx']
-    dk = ''.join(f'<div><b>{E(t[0])}</b><span{(" style=\"max-width:%su\""%t[2]) if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in c['dark'])
-    def tn(rows): return '<div class="tn">'+''.join(f'<div><b>{E(a)}</b><span>{E(b)}</span></div>' for a,b in rows)+'</div>'
+    BR=lambda x: E(x).replace(chr(10),' <br>')
+    dk = ''.join(f'<div><b>{E(t[0])}</b><span{((" style=\"white-space:nowrap\"" if t[2]=="n" else " style=\"max-width:%su\""%t[2])) if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in c['dark'])
+    def tn(rows): return '<div class="tn">'+''.join(f'<div><b>{E(t[0])}</b><span{(" style=\"max-width:%su\""%t[2]) if len(t)>2 else ""}>{E(t[1])}</span></div>' for t in rows)+'</div>'
     users = ''
     for col in c['users']:
         users += '<div>'
         for sub,name,items in col:
-            qs=''.join(f'<div class="q"><i>{E(a)}</i><span style="color:#000">{E(b)}</span></div>' for a,b in items)
+            qs=''.join(f'<div class="q"><i>{E(a)}</i><span style="color:#000">{BR(b)}</span></div>' for a,b in items)
             users += f'<div class="u"><div class="h"><span>{E(sub)}</span><b>{E(name)}</b></div>{qs}</div>'
         users += '</div>'
-    pers = ''.join(f'<div class="pi" style="aspect-ratio:{dims(n)[0]}/{dims(n)[1]}">{image(n, a, "width:100%;height:100%;object-fit:cover")}</div>' for n,a in c.get('personas',[]))
-    return f'''<section class="cs-ctx{' fq' if c.get('fixq') else ''}"><div class="row">
-<div class="l" data-reveal><span class="eb">01 · КОНТЕКСТ</span><div class="body">
-<div class="intro"><h2 class="geo up">{E(c['h'])}</h2><p>{E(c['p'])}</p></div>
+    HL=lambda x: re.sub(r'\{(.+?)\}',r'<i>\1</i>',E(x))
+    def pcard(p):
+        at=''.join(f'<div><span>{E(a)}</span><b>{E(b)}</b></div>' for a,b in p['at'])
+        js=''.join(f'<li>{HL(j)}</li>' for j in p['js'])
+        return f'<article class="pc"><div class="pt"><img src="assets/img/{p["img"]}.webp" width="180" height="180" alt="{E(p["name"])}" loading="lazy" decoding="async"><div><h3>{E(p["name"])}</h3><dl>{at}</dl></div></div><p>{E(p["bio"])}</p><ul>{js}</ul></article>'
+    pers = ''.join(pcard(p) for p in c.get('personas',[]))
+    return f'''<section class="cs-ctx{' fq' if c.get('fixq') else ''}{' sm' if c.get('sm') else ''}"{(' style="padding-left:%su;padding-right:%su"'%(c['pad'],c['pad'])) if c.get('pad') else ''}><div class="row">
+<div class="l" data-reveal><span class="eb">{E(c.get('lab','01 · КОНТЕКСТ'))}</span><div class="body">
+<div class="intro"><h2 class="geo up">{E(c['h'])}</h2><p{(' style="width:%su"'%c['pw']) if c.get('pw') else ''}>{BR(c['p'])}</p></div>
 <div class="mid"><div class="sub"><span class="eb">{E(c['dark_lab'])}</span><div class="dk">{dk}</div></div>{tn(c['tn'][0])}{tn(c['tn'][1])}</div>
 </div></div>
 <div class="us{' pe' if c.get('personas') else ''}" data-reveal style="--i:1">{pers if c.get('personas') else users}</div></div></section>'''
@@ -137,17 +143,24 @@ def research(d):
         elif len(cd)==4 and isinstance(cd[3],int): a,b,c,tw = cd; lab=f"{r.get('cl','ВЫВОД')} {i+1}"
         elif len(cd)==4: lab,a,b,c = cd
         else: a,b,c = cd; lab=f"{r.get('cl','ВЫВОД')} {i+1}"
-        cards += f'<div data-reveal style="--i:{i}"><div class="t"><span>{E(lab)}</span><b{(' style="max-width:%su"'%tw) if tw else ''}>{E(a).replace(chr(10),'<br>')}</b><p>{E(b)}</p></div><div class="sol"><span>→ {E(r.get('sl','РЕШЕНИЕ'))}</span><p>{E(c)}</p></div></div>'
+        cards += f'<div data-reveal style="--i:{i}"><div class="t"><span>{E(lab)}</span><b{(' style="max-width:%su"'%tw) if tw else ''}>{E(a).replace(chr(10),' <br>')}</b><p>{E(b)}</p></div><div class="sol"><span>→ {E(r.get('sl','РЕШЕНИЕ'))}</span><p>{E(c)}</p></div></div>'
     return f'''<section class="cs-res"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2 class="geo">{E(r['h'])}</h2><p class="t">{E(r['p'])}</p></div><div class="cards">{cards}</div></section>'''
 
 def arch(d):
     a=d.get('arch')
-    return figsec('archf',a['lab'],a['h'],a['p'],a['img'],a['alt']) if a else ''
+    if not a: return ''
+    if not a.get('cap'):
+        return figsec('archf',a['lab'],a['h'],a['p'],a['img'],a['alt'])
+    w,hh=dims(a['img'])
+    return f'''<section class="cs-arch"><div class="hd" data-reveal><span class="eb">{E(a['lab'])}</span><h2 class="geo up">{E(a['h'])}</h2><p class="t"{(' style="width:%su"'%a['pw']) if a.get('pw') else ''}>{E(a['p']).replace(chr(10),' <br>')}</p></div><div class="sch" data-reveal><span class="eb">{E(a['cap'])}</span><div class="fgi" role="img" aria-label="{E(a['alt'])}" tabindex="0"><img src="assets/img/{a['img']}.webp" width="{w}" height="{hh}" alt="{E(a['alt'])}" loading="lazy" decoding="async"></div></div></section>'''
 
 def solutions(d):
     s = d['sol']
     if s.get('kind')=='rows':
-        rows=''.join(f'<div class="rwx" data-reveal><div class="fgi" role="img" aria-label="{E(al)}" tabindex="0"><img src="assets/img/{im}.webp" width="{dims(im)[0]}" height="{dims(im)[1]}" alt="{E(al)}" loading="lazy" decoding="async"></div></div>' for im,al in s['rows'])
+        n=len(s['rows']); rows=''
+        for r in s['rows']:
+            sw,sh=dims(r['scr']); cw,ch=dims(r['sch'])
+            rows+=f'''<div class="rwx" data-reveal><div class="rt"><div class="rl"><span class="eb">РЕШЕНИЕ {r['n']} / {n}</span><h3{' class="nw"' if r.get('nw') else ''}>{E(r['t'])}</h3><p{(' style="max-width:%su"'%r['dw']) if r.get('dw') else ''}>{E(r['d'])}</p><div class="rcd"><span>РЕШЕНИЕ</span><p>{E(r['sol'])}</p></div><div class="rcd ef"><span>ЭФФЕКТ</span><p>{E(r['eff'])}</p></div></div><div class="rr"><div class="fgi" role="img" aria-label="Экраны: {E(r['t'])}" tabindex="0" style="width:{sw/2:g}u"><img src="assets/img/{r['scr']}.webp" width="{sw}" height="{sh}" alt="Экраны: {E(r['t'])}" loading="lazy" decoding="async"></div></div></div><div class="rb"><span class="eb">{E(r['cap'])}</span><div class="fgi" role="img" aria-label="Схема сценариев: {E(r['t'])}" tabindex="0"><img src="assets/img/{r['sch']}.webp" width="{cw}" height="{ch}" alt="Схема сценариев: {E(r['t'])}" loading="lazy" decoding="async"></div></div></div>'''
         return f'''<section class="cs-sol rows"><div class="hd" data-reveal><span class="eb">{E(s['lab'])}</span><h2 class="geo up">{E(s['h'])}</h2><p class="t">{E(s['p'])}</p></div><div class="rwg">{rows}</div></section>'''
     if s.get('kind')=='cards':
         n=len(s['items']); rows=''

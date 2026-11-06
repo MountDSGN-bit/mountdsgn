@@ -88,11 +88,40 @@
 @media (max-width:1099px){
 .cs-hero .hpr{position:relative;top:auto;height:auto;display:flex;gap:8px;margin:18px -16px 0;align-items:flex-start;overflow:hidden;max-height:130px}
 .cs-hero .hp{position:relative;left:auto!important;top:auto!important;width:auto;flex:1 1 0;border-radius:14px 14px 0 0}
-.cs-fig .fgi,.cs-sol .rwx{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.cs-fig .fgi img,.cs-sol .rwx img{min-width:860px}
-.cs-sol .rwx{border-radius:12px}
+.cs-fig .fgi,.cs-arch .fgi,.cs-sol .rb .fgi{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cs-fig .fgi img,.cs-arch .fgi img,.cs-sol .rb .fgi img{min-width:860px}
 .cs-sol.rows .rwg{gap:24px}
 }
 @media (max-width:1099px){.wide .cs-hero h1{white-space:normal;width:auto}.wide .cs-hero .in .d{width:auto}.cs-meta .row>div,.wide .cs-meta .row>div{width:auto;flex:none}}
 @media (max-width:1099px){.cs-ctx .us.pe{height:auto;overflow:visible}.cs-oth .hd p{margin-right:0;width:auto}}
 @media (max-width:1099px){.cs-ctx .us{height:auto}.cs-ctx .us>div>.u{flex:none}}
+
+@media (max-width:1099px){
+.cs-ctx{padding:48px 20px!important}
+.cs-ctx .intro p{width:auto!important}.cs-ctx .intro p br,.cs-ctx .u .q br{display:none}
+.cs-ctx .dk span{white-space:normal!important}.cs-ctx .tn span{max-width:none!important}
+.cs-arch{padding:48px 20px;gap:28px}
+.cs-arch .hd{gap:14px}.cs-arch .hd p.t{width:auto!important;font-size:14px}.cs-arch .hd p.t br{display:none}
+.cs-arch .sch{gap:12px}
+.cs-sol .rwx{gap:16px}
+.cs-sol .rt{flex-direction:column;gap:16px}
+.cs-sol .rl{width:auto;gap:10px}
+.cs-sol .rl h3{font-size:20px}.cs-sol .rl h3.nw{white-space:normal}
+.cs-sol .rl>p{font-size:14px;max-width:none!important}
+.cs-sol .rcd{padding:16px;border-radius:16px;gap:6px}.cs-sol .rcd span{font-size:12px}.cs-sol .rcd p{font-size:14px;line-height:1.5}
+.cs-sol .rr{width:100%}.cs-sol .rr .fgi{width:100%!important}
+.cs-sol .rb{gap:8px}
+}
+@media (max-width:1099px){.cs-hero .ph{padding:4px;border-radius:14px 14px 0 0}.cs-hero .ph img{border-radius:10px 10px 0 0;height:auto!important;width:100%}.cs-hero .ph{height:auto!important}}
+
+@media (max-width:1099px){
+.cs-ctx .pc{padding:20px;border-radius:18px;gap:14px}.cs-ctx .pc .pt{gap:16px}.cs-ctx .pc .pt img{width:72px;height:72px}.cs-ctx .pc h3{font-size:22px}.cs-ctx .pc dl>div,.cs-ctx .pc p,.cs-ctx .pc li{font-size:14px}.cs-ctx .pc dl span{font-size:12px}.cs-ctx.sm .dk b{font-size:18px!important}
+
+.cs-ctx.sm .l{position:static}
+.cs-ctx .pc .pt{display:grid!important;grid-template-columns:72px 1fr;gap:12px 16px!important;align-items:center}
+.cs-ctx .pc .pt>div{display:contents}
+.cs-ctx .pc h3{margin:0!important}
+.cs-ctx .pc dl{grid-column:1/-1;display:grid!important;grid-template-columns:1fr 1fr;gap:10px 16px!important}
+.cs-ctx .pc dl>div{gap:2px!important}
+.cs-ctx .pc ul{gap:12px!important}
+}

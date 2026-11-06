@@ -31,7 +31,7 @@ def card(i,c):
     return f'''<a class="fx-card" href="{slug}.html" data-reveal style="--i:{i%2}">
 <div class="cbg"><img src="assets/img/fx-bg.webp" alt="" width="2400" height="1600" loading="lazy" decoding="async"></div>
 <div class="clip {kind}"><div style="{pos}top:{it}u;width:{iw}u;height:{ih}u"><img src="assets/img/{im}.webp" alt="Обложка кейса: {E(title)}" width="{iw_}" height="{ih_}" loading="lazy" decoding="async" style="height:{h}%;left:{l}%;top:{t}%;width:{w}%"></div></div>
-<div class="bar"><div class="in"><div class="txt"><span class="lab">{E(lab)}</span><div><h3>{E(title)}</h3><p class="sub" style="margin-top:8px">{E(sub)}</p></div></div>{ico('325c1','class="ic" aria-hidden="true"')}</div></div>
+<div class="bar"><div class="in"><div class="txt"><span class="lab">{E(lab)}</span><div><h3>{E(title)}</h3><p class="sub" style="margin-top:8px">{E(sub)}</p></div></div><span class="ic" aria-hidden="true"><svg viewBox="0 0 76 76" fill="none"><path d="M56 38H55C55 47.3888 47.3888 55 38 55V56V57C48.4934 57 57 48.4934 57 38H56ZM38 56V55C28.6112 55 21 47.3888 21 38H20H19C19 48.4934 27.5066 57 38 57V56ZM20 38H21C21 28.6112 28.6112 21 38 21V20V19C27.5066 19 19 27.5066 19 38H20ZM38 20V21C47.3888 21 55 28.6112 55 38H56H57C57 27.5066 48.4934 19 38 19V20Z" fill="#000"/><path class="ar" d="M33.403 30.4415C32.853 30.3915 32.3666 30.7968 32.3166 31.3468C32.2666 31.8969 32.6719 32.3833 33.2219 32.4333L33.3125 31.4374L33.403 30.4415ZM43.625 32.3749L44.6209 32.2843C44.5772 31.8036 44.1963 31.4227 43.7156 31.379L43.625 32.3749ZM43.5667 42.778C43.6167 43.328 44.1031 43.7333 44.6531 43.6833C45.2031 43.6333 45.6084 43.1469 45.5584 42.5969L44.5625 42.6875L43.5667 42.778ZM31.6679 42.9179C31.2773 43.3084 31.2773 43.9415 31.6679 44.3321C32.0584 44.7226 32.6915 44.7226 33.0821 44.3321L32.375 43.625L31.6679 42.9179ZM33.3125 31.4374L33.2219 32.4333L43.5345 33.3708L43.625 32.3749L43.7156 31.379L33.403 30.4415L33.3125 31.4374ZM43.625 32.3749L42.6291 32.4654L43.5667 42.778L44.5625 42.6875L45.5584 42.5969L44.6209 32.2843L43.625 32.3749ZM43.625 32.3749L42.9179 31.6678L31.6679 42.9179L32.375 43.625L33.0821 44.3321L44.3321 33.082L43.625 32.3749Z" fill="#000"/></svg></span></div></div>
 </a>'''
 
 JOBS = [
@@ -53,12 +53,12 @@ def build():
     (SITE/'assets/css/home.css').write_text(css)
     dots = [(390,670),(584,670),(1516,670),(1322,670),(390,537),(1516,537),(390,403),(584,403),(1516,404),(1322,404)]
     nav = [('home','#top','Главная','c66f8',True),('rezume','assets/Alexey-Gora-CV.pdf','Резюме','8a767',False),('cases','#cases','Кейсы','7e65a',False),('work','#work','Опыт','dec72',False),('tg','https://t.me/mountdsgn1','Telegram','2484d',False)]
-    navh = ''.join(f'<a href="{h}" data-label="{l}" aria-label="{l}"{" data-sec=\"%s\""%k if k in ("home","cases","work") else ""}{" aria-current=\"page\"" if cur else ""}{" download=\"Gora-Alexey-CV.pdf\"" if k=="rezume" else ""}{" target=\"_blank\" rel=\"noopener noreferrer\"" if k=="tg" else ""}>{ico(i,"aria-hidden=\"true\"")}</a>' for k,h,l,i,cur in nav)
+    navh = ''.join(f'<a href="{h}" data-label="{l}" aria-label="{l}"{" data-sec=\"%s\""%k if k in ("home","cases","work") else ""}{" aria-current=\"page\"" if cur else ""}{" download=\"Gora-Alexey-CV.pdf\"" if k=="rezume" else ""}{" target=\"_blank\" rel=\"noopener noreferrer\"" if k=="tg" else ""}><i class="ic" aria-hidden="true" style="-webkit-mask-image:url(assets/icons/fx/{i}.svg);mask-image:url(assets/icons/fx/{i}.svg)"></i></a>' for k,h,l,i,cur in nav)
     jobs = ''
     for j,(t,d,m,items) in enumerate(JOBS):
         jobs += f'''<article class="fx-job{" m" if m else ""}" data-reveal>
-<h3 style="margin:0;font:inherit"><button class="name" type="button" aria-expanded="true" aria-controls="job{j}"><span class="tt"><b>{E(t)}</b><small><i></i>{E(d)}</small></span><span class="fx-chev">{ico('b8699','aria-hidden="true"')}</span></button></h3>
-<div class="body" id="job{j}"><div><ul>{''.join(f'<li>{ico("13100","aria-hidden=\"true\"")}<span>{E(x)}</span></li>' for x in items)}</ul></div></div>
+<h3 style="margin:0;font:inherit"><button class="name" type="button" aria-expanded="false" aria-controls="job{j}"><span class="tt"><b>{E(t)}</b><small><i></i>{E(d)}</small></span><span class="fx-chev">{ico('b8699','aria-hidden="true"')}</span></button></h3>
+<div class="body" id="job{j}" hidden><div><ul>{''.join(f'<li>{ico("13100","aria-hidden=\"true\"")}<span>{E(x)}</span></li>' for x in items)}</ul></div></div>
 </article>
 '''
     page = f'''<!doctype html>
