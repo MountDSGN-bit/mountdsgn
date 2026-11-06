@@ -62,21 +62,43 @@
     });
   });
 
-  /* ---------- Dock active state on home ---------- */
+  /* ---------- Dock active state on home (sliding pill) ---------- */
   const dock = document.querySelector('.dock, .fx-nav');
-  if (dock && document.body.classList.contains('home') && 'IntersectionObserver' in window) {
-    const map = { top: 'home', cases: 'cases', work: 'work' };
+  if (dock && document.body.classList.contains('home')) {
     const links = {};
     dock.querySelectorAll('a[data-sec]').forEach(a => links[a.dataset.sec] = a);
-    const setActive = key => Object.entries(links).forEach(([k, a]) => k === key ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
-    const seen = new Map();
-    const so = new IntersectionObserver(es => {
-      es.forEach(en => seen.set(en.target.id, en.isIntersecting ? en.intersectionRatio : 0));
-      let best = 'top', max = 0;
-      seen.forEach((r, id) => { if (r > max) { max = r; best = id; } });
-      setActive(map[best] || 'home');
-    }, { threshold: [0, .15, .35, .6] });
-    ['top', 'cases', 'work'].forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
+    const resumeLink = dock.querySelector('a[download]');
+    if (resumeLink) links.resume = resumeLink;
+    const pill = document.createElement('i');
+    pill.className = 'pill'; pill.setAttribute('aria-hidden', 'true');
+    dock.insertBefore(pill, dock.firstChild);
+    let cur = null, first = true;
+    const place = a => {
+      pill.style.top = a.offsetTop + 'px'; pill.style.width = a.offsetWidth + 'px'; pill.style.height = a.offsetHeight + 'px';
+      pill.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+    };
+    const setActive = key => {
+      const a = links[key]; if (!a || key === cur) return;
+      cur = key;
+      Object.values(links).forEach(l => l === a ? l.setAttribute('aria-current', 'page') : l.removeAttribute('aria-current'));
+      if (first) { pill.style.transition = 'none'; place(a); pill.offsetWidth; pill.style.transition = ''; dock.classList.add('pl'); first = false; }
+      else place(a);
+    };
+    const secTop = id => { const el = document.getElementById(id); return el ? el.getBoundingClientRect().top : Infinity; };
+    const resumeEl = document.querySelector('.fx-resume');
+    let tick = false;
+    const calc = () => {
+      tick = false;
+      const vh = innerHeight;
+      let key = 'home';
+      if (secTop('work') < vh * 0.5) key = 'work';
+      else if (secTop('cases') < vh * 0.5) key = 'cases';
+      else if (resumeEl && resumeEl.getBoundingClientRect().top < vh * 0.7) key = 'resume';
+      setActive(key);
+    };
+    const on = () => { if (!tick) { tick = true; requestAnimationFrame(calc); } };
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', () => { on(); if (cur && links[cur]) { pill.style.transition = 'none'; place(links[cur]); pill.offsetWidth; pill.style.transition = ''; } });
+    calc();
   }
 
   /* ---------- Hide dock at page bottom, show on scroll up ---------- */
@@ -91,23 +113,6 @@
     };
     addEventListener('scroll', chk, { passive: true });
     fxNav.addEventListener('focusin', () => fxNav.classList.remove('away'));
-  }
-
-  /* ---------- Resume arrow: scroll-linked slide (mobile) ---------- */
-  const rImg = document.querySelector('.fx-resume img');
-  if (rImg && !reduce.matches) {
-    const mq = matchMedia('(max-width:1099px)');
-    let tick = false;
-    const upd = () => {
-      tick = false;
-      if (!mq.matches) { rImg.style.transform = ''; return; }
-      const r = rImg.getBoundingClientRect(), vh = innerHeight;
-      const p = Math.min(1, Math.max(0, (vh * 0.95 - r.top) / (vh * 0.55)));
-      rImg.style.transition = 'none';
-      rImg.style.transform = 'translate(' + (p * 6).toFixed(2) + 'px,' + (-p * 6).toFixed(2) + 'px)';
-    };
-    const on = () => { if (!tick) { tick = true; requestAnimationFrame(upd); } };
-    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on); upd();
   }
 
   /* ---------- Lightbox for screens ---------- */
