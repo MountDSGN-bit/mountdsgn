@@ -126,7 +126,8 @@ def context(d):
         at=''.join(f'<div><span>{E(a)}</span><b>{E(b)}</b></div>' for a,b in p['at'])
         js=''.join(f'<li>{HL(j)}</li>' for j in p['js'])
         return f'<article class="pc"><div class="pt"><img src="assets/img/{p["img"]}.webp" width="180" height="180" alt="{E(p["name"])}" loading="lazy" decoding="async"><div><h3>{E(p["name"])}</h3><dl>{at}</dl></div></div><p>{E(p["bio"])}</p><ul>{js}</ul></article>'
-    pers = ''.join(pcard(p) for p in c.get('personas',[]))
+    def pimg(n,a): return f'<div class="pi" style="aspect-ratio:{dims(n)[0]}/{dims(n)[1]}">{image(n, a, "width:100%;height:100%;object-fit:cover")}</div>'
+    pers = ''.join(pcard(p) if isinstance(p,dict) else pimg(*p) for p in c.get('personas',[]))
     return f'''<section class="cs-ctx{' fq' if c.get('fixq') else ''}{' sm' if c.get('sm') else ''}"{(' style="padding-left:%su;padding-right:%su"'%(c['pad'],c['pad'])) if c.get('pad') else ''}><div class="row">
 <div class="l" data-reveal><span class="eb">{E(c.get('lab','01 · КОНТЕКСТ'))}</span><div class="body">
 <div class="intro"><h2 class="geo up">{E(c['h'])}</h2><p{(' style="width:%su"'%c['pw']) if c.get('pw') else ''}>{BR(c['p'])}</p></div>
@@ -222,6 +223,7 @@ def build(slug, d):
 </main>
 {footer()}
 </div>
+<button type="button" class="totop" aria-label="Наверх"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <script src="assets/js/site.js" defer></script>
 </body>
 </html>

@@ -167,7 +167,9 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-ctx.sm .row{align-items:flex-start}
 .cs-ctx.sm .l{position:sticky;top:100u}
 .cs-ctx.sm .mid{justify-content:flex-start;gap:20u}
-.cs-ctx .us.pe{flex-direction:column;gap:16u;height:auto}
+.cs-ctx .us.pe{flex-direction:column;gap:16u;height:596u;overflow:hidden}
+.cs-ctx .us.pe .pi{border-radius:25u;overflow:hidden;width:100%}
+.cs-ctx.sm .us.pe{height:auto;overflow:visible}
 .cs-ctx .pc{background:#091a32;color:#fff;border-radius:25u;padding:28u 32u;display:flex;flex-direction:column;gap:16u}
 .cs-ctx .pc .pt{display:flex;gap:24u;align-items:center}
 .cs-ctx .pc .pt img{width:96u;height:96u;border-radius:50%;object-fit:cover;flex:none}
@@ -227,3 +229,9 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .cs-sol .rb .fgi img{display:block;width:100%;height:auto}
 
 .cs-sol .rl h3.nw{white-space:nowrap}
+
+.totop{position:fixed;right:40px;bottom:40px;z-index:20;width:52px;height:52px;border-radius:16px;border:0;background:var(--ac,#28282a);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s,transform .25s,visibility .25s,background-color .2s}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--ac-d,#000)}
+.totop:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.totop{transition:none}}

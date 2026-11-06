@@ -44,6 +44,14 @@
     upd();
   }
 
+  /* ---------- Back to top (case pages) ---------- */
+  const up = document.querySelector('.totop');
+  if (up) {
+    const sync = () => up.classList.toggle('on', scrollY > innerHeight * 0.8);
+    addEventListener('scroll', sync, { passive: true }); sync();
+    up.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' }));
+  }
+
   /* ---------- Accordion (experience) ---------- */
   document.querySelectorAll('.job-btn, .fx-job .name').forEach(btn => {
     const body = document.getElementById(btn.getAttribute('aria-controls'));
