@@ -45,7 +45,7 @@
   }
 
   /* ---------- Accordion (experience) ---------- */
-  document.querySelectorAll('.job-btn').forEach(btn => {
+  document.querySelectorAll('.job-btn, .fx-job .name').forEach(btn => {
     const body = document.getElementById(btn.getAttribute('aria-controls'));
     btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
@@ -55,7 +55,7 @@
   });
 
   /* ---------- Dock active state on home ---------- */
-  const dock = document.querySelector('.dock');
+  const dock = document.querySelector('.dock, .fx-nav');
   if (dock && document.body.classList.contains('home') && 'IntersectionObserver' in window) {
     const map = { top: 'home', cases: 'cases', work: 'work' };
     const links = {};
