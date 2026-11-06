@@ -79,6 +79,20 @@
     ['top', 'cases', 'work'].forEach(id => { const el = document.getElementById(id); if (el) so.observe(el); });
   }
 
+  /* ---------- Hide dock at page bottom, show on scroll up ---------- */
+  const fxNav = document.querySelector('.fx-nav');
+  if (fxNav) {
+    let last = scrollY;
+    const chk = () => {
+      const y = scrollY, atEnd = y + innerHeight >= root.scrollHeight - 8;
+      if (atEnd) fxNav.classList.add('away');
+      else if (y < last) fxNav.classList.remove('away');
+      last = y;
+    };
+    addEventListener('scroll', chk, { passive: true });
+    fxNav.addEventListener('focusin', () => fxNav.classList.remove('away'));
+  }
+
   /* ---------- Lightbox for screens ---------- */
   const lb = document.createElement('div');
   lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Просмотр изображения');
