@@ -1,0 +1,181 @@
+/* Case pages — values from Figma "Case page" frames (1920 wide). Nu = N design px */
+@font-face{font-family:Geologica;font-weight:600;font-display:swap;src:url(../fonts/Geologica-SemiBold.woff) format("woff")}
+.cs{--ac:#8763cd;--ac-d:#50298a;--ac-l:#b7b7fe;--tint:#efeafb;--ac2:#8763cc}
+body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr",system-ui,sans-serif;overflow-x:hidden}
+.cs .pg{width:100%;max-width:1920px;margin-inline:auto;position:relative}
+.cs p,.cs h1,.cs h2,.cs h3{margin:0}
+.cs img{display:block;max-width:none}
+.cs .geo{font-family:Geologica,"Montserrat Cyr",Poppins,sans-serif;font-weight:600;font-size:28u;line-height:33.6u;letter-spacing:-1.12u;color:var(--ac)}
+.cs .up{text-transform:uppercase}
+.cs .eb{font-size:14u;line-height:1.4;color:#888;font-weight:400}
+
+/* top bar */
+.cs-top{position:absolute;left:61u;top:47u;width:1797u;display:flex;justify-content:space-between;align-items:flex-start;z-index:5}
+.cs-top .who{font:300 20u/normal Inter,system-ui,sans-serif;color:#28282a}
+.cs-top .who a{display:block;transition:opacity .2s}.cs-top .who a:hover{opacity:.6}
+.cs-back{display:flex;gap:10u;align-items:center;height:50u;padding:12u 20u;border-radius:31u;background:#262626;color:#d4d4d4;font:400 18u/1.25 Poppins,"Montserrat Cyr",sans-serif;white-space:nowrap;transition:background-color .2s,transform .16s}
+.cs-back img{width:24u;height:24u;transform:rotate(90deg);transition:transform .25s cubic-bezier(.23,1,.32,1)}
+@media(hover:hover){.cs-back:hover{background:#3a3a3a}.cs-back:hover img{transform:rotate(90deg) translateY(-3u)}}
+.cs-back:active{transform:scale(.97)}
+
+/* hero */
+.cs-hero{padding:138u 200u 100u}
+.cs-hero .card{position:relative;height:650u;border-radius:30u;overflow:hidden}
+.cs-hero .card>.bgi{position:absolute;inset:0;overflow:hidden;border-radius:30u}
+.cs-hero .card>.bgi img{position:absolute;height:159.28%;left:-7.37%;top:-.05%;width:117%}
+.cs-hero .in{position:absolute;left:50%;top:50u;transform:translateX(-50%);width:1229u;display:flex;flex-direction:column;gap:20u;align-items:center}
+.cs-hero .in .k{font-weight:300;font-size:22u;line-height:1.25;color:#484848;text-align:center}
+.cs-hero h1{font-weight:500;font-size:60u;line-height:1.1;text-align:center;width:953u}
+.cs-hero .in .d{font-weight:400;font-size:24u;line-height:1.25;color:#484848;text-align:center;width:967u}
+.cs-hero .shots{display:flex;gap:10u;align-items:center}
+.cs-hero .shot{width:566u;background:rgba(172,172,172,.2);border-radius:30u;padding:10u;overflow:hidden}
+.cs-hero .shot .im{position:relative;width:100%;border-radius:25u;overflow:hidden}
+.cs-hero .shot .im img{position:absolute}
+.cs-hero .shine{position:absolute;inset:0;border-radius:30u;pointer-events:none;box-shadow:inset 0 0 34.5u rgba(0,0,0,.1)}
+
+/* meta */
+.cs-meta{padding:0 200u 100u;display:flex;flex-direction:column;gap:64u;overflow:hidden}
+.cs-meta .ln{height:1px;width:1654u;background:#e0e0e0}
+.cs-meta .row{background:#f5f5f5;border-radius:25u;padding:20u 40u;display:flex;justify-content:space-between;align-items:center}
+.cs-meta .row>div{display:flex;flex-direction:column;gap:10u;width:260u}
+.cs-meta .row>div:last-child{width:340u}
+.cs-meta .k{font-size:16u;line-height:1.4;color:#888}
+.cs-meta .v{font-size:22u;line-height:1.35}
+
+/* summary */
+.cs-sum{padding:0 200u 120u;display:flex;flex-direction:column;gap:30u;overflow:hidden}
+.cs-sum .r2{display:flex;justify-content:space-between;align-items:flex-start}
+.cs-sum .col{display:flex;flex-direction:column;gap:12u}
+.cs-sum .col p{font-size:16u;line-height:1.4}
+.cs-sum .tags{display:flex;gap:12u;flex-wrap:wrap}
+.cs .tag{background:var(--tint);color:var(--ac);border-radius:100u;padding:8u 16u;font-weight:500;font-size:11u;line-height:1.3;white-space:nowrap}
+.cs-sum .nums{display:flex;gap:24u}
+.cs-sum .nums>div{flex:1 0 0;background:#f5f5f5;border-radius:25u;padding:25u 36u;display:flex;flex-direction:column;gap:10u}
+.cs-sum .nums b{font-weight:600;font-size:40u;line-height:1.1}
+.cs-sum .nums span{font-size:18u;line-height:1.4;color:#888}
+
+/* context */
+.cs-ctx{padding:100u 200u}
+.cs-ctx .row{display:flex;gap:70u;align-items:stretch}
+.cs-ctx .l{display:flex;flex-direction:column;gap:10u;width:754u;flex:none}
+.cs-ctx .l .body{flex:1;display:flex;flex-direction:column;gap:20u}
+.cs-ctx .intro{display:flex;flex-direction:column;gap:20u}
+.cs-ctx .intro p{font-size:16u;line-height:1.4;width:617u}
+.cs-ctx .mid{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:20u}
+.cs-ctx .sub{display:flex;flex-direction:column;gap:10u}
+.cs-ctx .dk{display:flex;gap:10u}
+.cs-ctx .dk>div{flex:1 0 0;min-width:0;background:#28282a;border-radius:20u;padding:16u 20u;display:flex;flex-direction:column;gap:6u}
+.cs-ctx .dk b{font-weight:600;font-size:28u;line-height:1.1;color:#fff;white-space:nowrap}
+.cs-ctx .dk span{font-size:14u;line-height:1.4;color:rgba(255,255,255,.7)}
+.cs-ctx .tn{display:flex;gap:10u}
+.cs-ctx .tn>div{flex:1 0 0;min-width:0;background:var(--tint);border-radius:16u;padding:16u 20u;display:flex;flex-direction:column;gap:6u}
+.cs-ctx .tn b{font-weight:600;font-size:28u;line-height:1.1;white-space:nowrap}
+.cs-ctx .tn span{font-size:14u;line-height:1.4;color:#888}
+.cs-ctx .us{flex:1 0 0;display:flex;gap:24u}
+.cs-ctx .us>div{flex:1 0 0;display:flex;flex-direction:column;gap:24u}
+.cs-ctx .u{background:#f5f5f5;border-radius:25u;padding:32u;display:flex;flex-direction:column;gap:16u}
+.cs-ctx .u .h{display:flex;flex-direction:column;gap:8u}
+.cs-ctx .u .h span{font-size:14u;line-height:1.4;color:#888}
+.cs-ctx .u .h b{font-weight:600;font-size:24u;line-height:1.1}
+.cs-ctx .u .q{display:flex;flex-direction:column;gap:8u;font-size:14u;line-height:1.4}
+.cs-ctx .u .q i{font-style:normal;color:var(--ac)}
+
+/* research */
+.cs-res{background:#28282a;color:#fff;padding:100u 133u;display:flex;flex-direction:column;gap:64u;overflow:hidden}
+.cs-res .hd{display:flex;flex-direction:column;gap:20u}
+.cs-res .hd p.t{font-size:16u;line-height:1.4;width:569u}
+.cs-res .hd .geo{color:var(--ac-l)}
+.cs-res .hd .eb{color:#fff}
+.cs-res .cards{display:flex;gap:24u;align-items:stretch}
+.cs-res .cards>div{width:535u;background:#363638;border-radius:25u;padding:36u;display:flex;flex-direction:column;justify-content:space-between;gap:12u}
+.cs-res .cards .t{display:flex;flex-direction:column;gap:12u}
+.cs-res .cards .t span{font-size:14u;line-height:1.4;color:var(--ac-l)}
+.cs-res .cards .t b{font-weight:600;font-size:24u;line-height:1.1}
+.cs-res .cards .t p{font-size:14u;line-height:1.4}
+.cs-res .cards .sol{background:#fff;border-radius:16u;padding:16u 20u;display:flex;flex-direction:column;gap:6u;color:#000}
+.cs-res .cards .sol span{font-size:14u;line-height:1.4;color:var(--ac)}
+.cs-res .cards .sol p{font-weight:500;font-size:17u;line-height:1.35}
+
+/* solutions */
+.cs-sol{padding:100u 133u;display:flex;flex-direction:column;gap:72u;overflow:hidden}
+.cs-sol .hd{display:flex;flex-direction:column;gap:18u}
+.cs-sol .hd .geo{color:var(--ac-d)}
+.cs-sol .hd p.t{font-size:16u;line-height:1.4}
+.cs-sol .sum{display:flex;gap:16u}
+.cs-sol .sum>div{flex:1 0 0;min-width:0;background:#f5f5f5;border-radius:20u;padding:24u;display:flex;flex-direction:column;gap:10u}
+.cs-sol .sum span{font-size:14u;color:var(--ac2)}
+.cs-sol .sum b{font-family:Geologica,"Montserrat Cyr",Poppins,sans-serif;font-weight:600;font-size:22u;color:#28282a}
+.cs-sol .sum p{font-size:15u;color:#66666b}
+.cs-sol .board{position:relative;background:#f5f5f5;border-radius:24u;overflow:hidden}
+.cs-sol .board .rc{position:absolute;border-radius:10u;overflow:hidden}
+.cs-sol .board .rc img{position:absolute;left:0;width:100%}
+.cs-sol .board .rc{cursor:zoom-in}
+
+/* results */
+.cs-out{background:#28282a;color:#fff;padding:100u 133u;display:flex;flex-direction:column;gap:64u;overflow:hidden}
+.cs-out .hd{display:flex;flex-direction:column;gap:20u}
+.cs-out .hd .eb{color:#fff}
+.cs-out h2{font-weight:500;font-size:72u;line-height:1.12}
+.cs-out .hd p.t{font-weight:300;font-size:24u;line-height:1.45;color:#bebebe;width:1100u}
+.cs-out .grid{display:grid;grid-template-columns:repeat(3,535u);gap:24u}
+.cs-out .grid>div{background:#363638;border-radius:25u;padding:36u;display:flex;flex-direction:column;gap:12u}
+.cs-out .grid b{font-weight:500;font-size:80u;line-height:1.1}
+.cs-out .grid span{font-size:20u;line-height:1.4;color:#bebebe}
+
+/* reflection */
+.cs-ref{padding:100u 133u;display:flex;flex-direction:column;gap:64u;overflow:hidden}
+.cs-ref .hd{display:flex;flex-direction:column;gap:20u}
+.cs-ref h2{font-weight:500;font-size:72u;line-height:1.12}
+.cs-ref .cards{display:flex;gap:24u;align-items:stretch}
+.cs-ref .cards>div{width:395u;background:#f5f5f5;border-radius:25u;padding:32u;display:flex;flex-direction:column;gap:16u}
+.cs-ref .cards span{font-size:14u;line-height:1.4;color:var(--ac-d)}
+.cs-ref .cards p{font-size:19u;line-height:1.5}
+
+/* other projects */
+.cs-oth{padding:100u 133u;display:flex;justify-content:center}
+.cs-oth>.in{width:1694u;display:flex;flex-direction:column;gap:66u}
+.cs-oth .hd{display:flex;justify-content:space-between;align-items:flex-end}
+.cs-oth h2{font-weight:500;font-size:100u;line-height:1.13;white-space:nowrap}
+.cs-oth .hd p{font-weight:300;font-size:22u;line-height:1.5;width:271u}
+.cs-oth .g{display:flex;flex-direction:column;gap:48u}
+.cs-oth .r{display:flex;gap:48u}
+.cs-oth .r.n{gap:51u}
+.cs-oth .fx-card{flex:none}
+
+/* motion */
+.js .cs [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);transition-delay:calc(var(--i,0)*80ms)}
+.js .cs [data-reveal].is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .cs [data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* variants */
+.cs-hero .phones{position:relative;display:flex;gap:40u;margin-top:auto;justify-content:center}
+.cs-hero .ph{width:260u;height:587u;flex:none}
+.cs-sol .scg{display:flex;flex-direction:column;gap:16u}
+.cs-sol .scr{display:flex;gap:16u;align-items:flex-start}
+.cs-sol .scr>div{flex:1 0 0;min-width:0;background:#f5f5f5;border-radius:20u;padding:24u;display:flex;flex-direction:column;gap:10u}
+.cs-sol .scr b{font-family:Geologica,"Montserrat Cyr",Poppins,sans-serif;font-weight:600;font-size:22u;line-height:1.5;color:#28282a}
+.cs-sol .scr span{font-size:14u;color:var(--ac2)}
+.cs-sol .scr p{font-size:15u;color:#66666b;line-height:1.5}
+.cs-sol .scs{display:flex;gap:12u;margin-top:10u}
+.cs-sol .sc{flex:1 0 0;height:375u;border-radius:14u;overflow:hidden;cursor:zoom-in}
+
+.cs-hero .himg{position:absolute;left:189u;top:360u;width:1142u;height:400u;border-radius:25u;overflow:hidden;box-shadow:0 0 0 10u rgba(172,172,172,.2)}
+.cs-ctx .us.pe{flex-direction:column;gap:16u}
+.cs-ctx .us.pe .pi{border-radius:25u;overflow:hidden;width:100%}
+
+.wide .cs-hero{padding-left:133u;padding-right:133u}
+.wide .cs-meta,.wide .cs-sum{padding-left:133u;padding-right:133u}
+.cs-hero .hpr{position:absolute;left:0;top:0;width:100%;height:100%}
+.cs-hero .hp{position:absolute;width:546u;border-radius:25u 25u 0 0;overflow:hidden}
+.cs-fig .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cs-fig .fgi{width:100%}
+.cs-fig img,.cs-sol .rwx img{display:block;width:100%;height:auto}
+.cs-sol.rows .rwg{display:flex;flex-direction:column;gap:56u}
+.cs-sol.rows{gap:56u}
+.wide .cs-hero h1{width:1172u}
+.wide .cs-hero .in .d{width:1230u}
+.wide .cs-hero h1{width:auto;white-space:nowrap}
+.wide .cs-meta .row>div,.mf .cs-meta .row>div{width:auto;flex:1 1 0}
+.wide .cs-meta .row>div:last-child,.mf .cs-meta .row>div:last-child{width:auto;flex:1 1 0}
+.cs-fig .fgi,.cs-sol .rwx .fgi,.cs-sol .board .rc,.cs-sol .sc{cursor:zoom-in}
+.cs-fig .fgi:focus-visible,.cs-sol .rwx .fgi:focus-visible,.cs-sol .rc:focus-visible,.cs-sol .sc:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
