@@ -46,7 +46,7 @@ def others(slugs):
     r1 = ''.join(pcard(s, True, i) for i,s in enumerate(top))
     r2 = ''.join(pcard(s, False, i) for i,s in enumerate(bot))
     return f'''<section class="cs-oth" aria-labelledby="oth-h"><div class="in">
-<div class="hd" data-reveal><h2 id="oth-h">Другие проекты</h2><p>Можете ознакомиться с моими другими проетами</p></div>
+<div class="hd" data-reveal><h2 id="oth-h">Другие проекты</h2><p>Можете ознакомиться с моими другими проектами</p></div>
 <div class="g"><div class="r">{r1}</div><div class="r n">{r2}</div></div></div></section>'''
 
 def footer():
