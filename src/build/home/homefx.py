@@ -113,7 +113,7 @@ def build():
 <section class="fx-foot" aria-labelledby="contact-h">
 <div class="tx"><p class="up" data-reveal>Блок для связи.</p><h2 id="contact-h" style="margin:0;font:inherit"><span class="mid" style="position:absolute;left:0;top:28u;display:block" data-reveal>Поработаем вместе?</span><span class="down" style="position:absolute;left:0;top:121u;display:block" data-reveal>Напишите мне в телеграм</span></h2></div>
 <div class="line"></div>
-<dl data-reveal><div><dt>Email:</dt><dd><a href="mailto:mountdsgn@mail.ru">mountdsgn@mail.ru</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+79183212635">+7 (918) 321-26-35</a></dd></div></dl>
+<dl data-reveal><div><dt>Email:</dt><dd><a href="mailto:goraakk2@mail.ru">goraakk2@mail.ru</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+79183212635">+7 (918) 321-26-35</a></dd></div></dl>
 <a class="fx-btn" href="https://t.me/mountdsgn1" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram (откроется в новой вкладке)">{ico('c4553','class="a" aria-hidden="true"')}{ico('3c2a1','class="b" aria-hidden="true"')}<span class="t">Написать{ico('088e2','aria-hidden="true"')}</span></a>
 </section>
 </main>

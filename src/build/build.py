@@ -95,7 +95,7 @@ def contact():
 <p class="label" data-reveal>Блок для связи.</p>
 <h2 id="contact-h" data-reveal style="--i:1">Поработаем вместе?<br>Напишите мне в телеграм</h2>
 <div class="rule" data-reveal style="--i:2"><a class="tg-btn" href="https://t.me/mountdsgn1" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram (откроется в новой вкладке)"><span>Написать {icon('tg')}</span></a></div>
-<dl data-reveal style="--i:3"><div><dt>Email:</dt><dd>mountdsgn@mail.ru</dd></div><div><dt>Phone</dt><dd>+7 (918) 321-26-35</dd></div></dl>
+<dl data-reveal style="--i:3"><div><dt>Email:</dt><dd>goraakk2@mail.ru</dd></div><div><dt>Phone</dt><dd>+7 (918) 321-26-35</dd></div></dl>
 </div>
 </section>'''
 
