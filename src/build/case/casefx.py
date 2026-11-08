@@ -147,7 +147,9 @@ def research(d):
         elif len(cd)==4: lab,a,b,c = cd
         else: a,b,c = cd; lab=f"{r.get('cl','ВЫВОД')} {i+1}"
         cards += f'<div data-reveal style="--i:{i}"><div class="t"><span>{E(lab)}</span><b{(' style="max-width:%su"'%tw) if tw else ''}>{E(a).replace(chr(10),' <br>')}</b><p>{E(b)}</p></div><div class="sol"><span>→ {E(r.get('sl','РЕШЕНИЕ'))}</span><p>{E(c)}</p></div></div>'
-    return f'''<section class="cs-res"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2 class="geo">{E(r['h'])}</h2><p class="t">{E(r['p'])}</p></div><div class="cards">{cards}</div></section>'''
+    pst=(' style="width:%su"'%r['pw']) if r.get('pw') else ''
+    paras=''.join(f'<p class="t"{pst}>{E(x)}</p>' for x in r['p'].split(chr(10)))
+    return f'''<section class="cs-res"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2 class="geo">{E(r['h'])}</h2>{paras}</div><div class="cards">{cards}</div></section>'''
 
 def arch(d):
     a=d.get('arch')
