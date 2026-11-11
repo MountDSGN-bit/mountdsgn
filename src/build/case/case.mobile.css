@@ -322,3 +322,5 @@
 .fx-card .clip.kp{left:calc(50% + .5px)!important;transform:translateX(-50%)!important;top:0!important;width:calc(var(--u)*531)!important;height:calc(var(--u)*303)!important}
 .fx-card .clip.kp>div{left:calc(var(--u)*8)!important;top:calc(var(--u)*17)!important;width:calc(var(--u)*517)!important;height:calc(var(--u)*297)!important;transform:none!important}
 }
+
+@media (max-width:1099px){.cs-ds .dsh{display:block}.cs-ds .sd{max-width:100%;margin-top:24px}}

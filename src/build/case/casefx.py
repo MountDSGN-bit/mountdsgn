@@ -201,7 +201,12 @@ def dsblock(d, key='ds'):
     for f in a['figs']:
         w,hh=dims(f['img'])
         figs+=f'''<div class="sch" data-reveal><span class="eb">{E(f['cap'])}</span><div class="fgi" role="img" aria-label="{E(f['alt'])}" tabindex="0"><img src="assets/img/{f['img']}.webp" width="{w}" height="{hh}" alt="{E(f['alt'])}" loading="lazy" decoding="async"></div></div>'''
-    return f'''<section class="cs-arch cs-ds"><div class="hd" data-reveal><span class="eb">{E(a['lab'])}</span><h2 class="geo up">{E(a['h'])}</h2><p class="t"{(' style="width:%su"'%a['pw']) if a.get('pw') else ''}>{E(a['p']).replace(chr(10),'<br><br>')}</p></div>{figs}</section>'''
+    sd=''
+    if a.get('side'):
+        w,hh=dims(a['side']); sd=f'''<div class="sd" data-reveal><img src="assets/img/{a['side']}.webp" width="{w}" height="{hh}" alt="{E(a.get('side_alt',''))}" loading="lazy" decoding="async"></div>'''
+    hd=f'''<div class="hd" data-reveal><span class="eb">{E(a['lab'])}</span><h2 class="geo up">{E(a['h'])}</h2><p class="t"{(' style="width:%su"'%a['pw']) if a.get('pw') else ''}>{E(a['p']).replace(chr(10),'<br><br>')}</p></div>'''
+    top=f'<div class="dsh">{hd}{sd}</div>' if sd else hd
+    return f'''<section class="cs-arch cs-ds">{top}{figs}</section>'''
 
 def build(slug, d):
     pal = d['pal']
