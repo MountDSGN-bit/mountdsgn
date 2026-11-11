@@ -236,7 +236,7 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .totop:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.totop{transition:none}}
 
-.cs-ds .fgi{max-width:none;width:100%}.cs-ds .dsh{display:flex;gap:calc(var(--u)*56);align-items:flex-start;justify-content:space-between}.cs-ds .dsh .hd{flex:1 1 auto;min-width:0}.cs-ds .dsh .hd .t{width:auto!important}.cs-ds .sd{flex:0 0 calc(var(--u)*520);max-width:calc(var(--u)*520)}.cs-ds .sd img{width:100%;height:auto;display:block;border-radius:16px}
+.cs-ds .fgi{max-width:none;width:100%}.cs-ds .dsh{display:flex;gap:calc(var(--u)*56);align-items:flex-start;justify-content:space-between}.cs-ds .dsh .hd{flex:1 1 auto;min-width:0}.cs-ds .hd .t{width:auto!important;max-width:none}.cs-ds .sd{flex:0 0 calc(var(--u)*520);max-width:calc(var(--u)*520)}.cs-ds .sd img{width:100%;height:auto;display:block;border-radius:16px}
 
 /* ================= Mobile / tablet (<1100px) ================= */
 @media (max-width:1099px){
