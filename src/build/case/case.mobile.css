@@ -323,4 +323,5 @@
 .fx-card .clip.kp>div{left:calc(var(--u)*8)!important;top:calc(var(--u)*17)!important;width:calc(var(--u)*517)!important;height:calc(var(--u)*297)!important;transform:none!important}
 }
 
-@media (max-width:1099px){.cs-ds .dsh{display:block}.cs-ds .sd{max-width:100%;margin-top:24px}}
+@media (max-width:1099px){.cs-ds .dsh{display:flex;gap:32px;align-items:flex-start}.cs-ds .dsh .hd{flex:1 1 auto;min-width:0}.cs-ds .hd .t{width:auto!important;max-width:none}.cs-ds .sd{flex:0 0 34%;max-width:34%;margin-top:0}.cs-ds .fgi{overflow:visible}.cs-ds .fgi img{min-width:0;width:100%;height:auto}}
+@media (max-width:699px){.cs-ds .dsh{display:block}.cs-ds .sd{max-width:100%;margin-top:24px}.cs-ds .fgi{overflow-x:auto}.cs-ds .fgi img{min-width:860px}}
