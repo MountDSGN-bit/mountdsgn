@@ -236,6 +236,8 @@ body.cs{margin:0;background:#fff;color:#000;font-family:Poppins,"Montserrat Cyr"
 .totop:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.totop{transition:none}}
 
+.cs-ds .fgi{max-width:1000px}
+
 /* ================= Mobile / tablet (<1100px) ================= */
 @media (max-width:1099px){
 .cs .pg{max-width:760px}
