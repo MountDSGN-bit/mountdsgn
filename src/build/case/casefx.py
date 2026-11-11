@@ -194,6 +194,15 @@ def reflection(d):
     c = ''.join(f'<div data-reveal style="--i:{i}{";align-self:flex-start" if (i==0 and r.get("hug0")) else ""}"><span>{E(a)}</span><p>{E(b)}</p></div>' for i,(a,b) in enumerate(r['cards']))
     return f'''<section class="cs-ref"><div class="hd" data-reveal><span class="eb">{E(r['lab'])}</span><h2>{E(r['h'])}</h2></div><div class="cards">{c}</div></section>'''
 
+def dsblock(d):
+    a=d.get('ds')
+    if not a: return ''
+    figs=''
+    for f in a['figs']:
+        w,hh=dims(f['img'])
+        figs+=f'''<div class="sch" data-reveal><span class="eb">{E(f['cap'])}</span><div class="fgi" role="img" aria-label="{E(f['alt'])}" tabindex="0"><img src="assets/img/{f['img']}.webp" width="{w}" height="{hh}" alt="{E(f['alt'])}" loading="lazy" decoding="async"></div></div>'''
+    return f'''<section class="cs-arch cs-ds"><div class="hd" data-reveal><span class="eb">{E(a['lab'])}</span><h2 class="geo up">{E(a['h'])}</h2><p class="t"{(' style="width:%su"'%a['pw']) if a.get('pw') else ''}>{E(a['p'])}</p></div>{figs}</section>'''
+
 def build(slug, d):
     pal = d['pal']
     style = ';'.join(f'--{k}:{v}' for k,v in pal.items())
@@ -223,7 +232,7 @@ def build(slug, d):
 <div class="pg">
 <header class="cs-top"><p class="who"><a href="index.html">Алексей</a><a href="https://t.me/mountdsgn1" target="_blank" rel="noopener noreferrer">tg: @mountdsgn1</a></p><a class="cs-back" href="index.html#cases">{ico('arrow-down','aria-hidden="true"')}<span>Все кейсы</span></a></header>
 <main id="main">
-{hero(d)}{meta(d)}{summary(d)}{context(d)}{research(d)}{arch(d)}{solutions(d)}{results(d)}{reflection(d)}{others(d['others'])}
+{hero(d)}{meta(d)}{summary(d)}{context(d)}{research(d)}{arch(d)}{solutions(d)}{dsblock(d)}{results(d)}{reflection(d)}{others(d['others'])}
 </main>
 {footer()}
 </div>
