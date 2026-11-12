@@ -125,11 +125,11 @@
   const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; lastFocus && lastFocus.focus({ preventScroll: true }); };
   const open = fr => {
     const img = fr.querySelector('img'); if (!img) return;
-    lb.classList.toggle('big', fr.matches('.fgi'));
+    lb.classList.toggle('big', fr.matches('.fgi, .sd'));
     lastFocus = fr; lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt;
     lb.classList.add('on'); document.body.style.overflow = 'hidden'; lbBtn.focus({ preventScroll: true });
   };
-  document.querySelectorAll('.shot .fr, .cs-sol .rc, .cs-sol .sc, .cs-fig .fgi, .cs-arch .fgi, .cs-sol .rwx .fgi').forEach(fr => {
+  document.querySelectorAll('.shot .fr, .cs-sol .rc, .cs-sol .sc, .cs-fig .fgi, .cs-arch .fgi, .cs-sol .rwx .fgi, .cs-ds .sd').forEach(fr => {
     fr.tabIndex = 0; fr.setAttribute('role', 'button'); fr.setAttribute('aria-label', 'Открыть: ' + (fr.querySelector('img')?.alt || 'изображение'));
     fr.addEventListener('click', () => open(fr));
     fr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fr); } });
