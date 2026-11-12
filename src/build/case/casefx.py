@@ -199,6 +199,10 @@ def dsblock(d, key='ds'):
     if not a: return ''
     figs=''
     for f in a['figs']:
+        if f.get('imgs'):
+            tr=''.join(f'<div class="fgi" role="img" aria-label="{E(al)}" tabindex="0"><img src="assets/img/{im}.webp" width="{dims(im)[0]}" height="{dims(im)[1]}" alt="{E(al)}" loading="lazy" decoding="async"></div>' for im,al in f['imgs'])
+            figs+=f'''<div class="sch" data-reveal><span class="eb">{E(f['cap'])}</span><div class="trio">{tr}</div></div>'''
+            continue
         w,hh=dims(f['img'])
         figs+=f'''<div class="sch" data-reveal><span class="eb">{E(f['cap'])}</span><div class="fgi" role="img" aria-label="{E(f['alt'])}" tabindex="0"><img src="assets/img/{f['img']}.webp" width="{w}" height="{hh}" alt="{E(f['alt'])}" loading="lazy" decoding="async"></div></div>'''
     sd=''
@@ -237,7 +241,7 @@ def build(slug, d):
 <div class="pg">
 <header class="cs-top"><p class="who"><a href="index.html">Алексей</a><a href="https://t.me/mountdsgn1" target="_blank" rel="noopener noreferrer">tg: @mountdsgn1</a></p><a class="cs-back" href="index.html#cases">{ico('arrow-down','aria-hidden="true"')}<span>Все кейсы</span></a></header>
 <main id="main">
-{hero(d)}{meta(d)}{summary(d)}{context(d)}{research(d)}{arch(d)}{solutions(d)}{dsblock(d)}{dsblock(d,'ai')}{results(d)}{reflection(d)}{others(d['others'])}
+{hero(d)}{meta(d)}{summary(d)}{context(d)}{research(d)}{dsblock(d,'cjm')}{arch(d)}{solutions(d)}{dsblock(d)}{dsblock(d,'ai')}{results(d)}{reflection(d)}{others(d['others'])}
 </main>
 {footer()}
 </div>
